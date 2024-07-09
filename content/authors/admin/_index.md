@@ -54,10 +54,10 @@ interests:
   - 
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: PhD Candidate - Machine Learning Methods for Cold HI
+    institution: The Australian National University
+    date_start: 2024-01-20
+    date_end: Current
     summary: |
       Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     button:
