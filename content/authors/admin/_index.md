@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Mr. Eric G. M. Muller
+title: Eric G. M. Muller
 
 # Name pronunciation (optional)
 # name_pronunciation: Chien Shiung Wu
@@ -132,13 +132,13 @@ skills:
         percent: 80
         icon: camera
 
-languages:
-  - name: English
-    percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+# languages:
+#   - name: English
+#     percent: 100
+#   - name: Chinese
+#     percent: 75
+#   - name: Portuguese
+#     percent: 25
 
 # Awards.
 #   Add/remove as many awards below as you like.
