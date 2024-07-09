@@ -14,7 +14,7 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'Eric G. M. Muller's personal website.'
+    description: "Eric G. M. Muller's personal website."
     twitter: 'Eric__Muller'
   analytics:
     google_analytics: ''
