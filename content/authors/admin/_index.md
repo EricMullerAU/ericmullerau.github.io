@@ -45,7 +45,7 @@ profiles:
   #   url: https://scholar.google.com/
   - icon: academicons/orcid
     url: https://orcid.org/0000-0001-5621-1577
-  - icon: "custom/researchgate"
+  - icon: "custom/researchgate2"
     url: https://www.researchgate.net/profile/Eric-Muller-14
 
 interests:
