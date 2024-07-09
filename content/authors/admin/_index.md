@@ -31,7 +31,7 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'eric.muller@anu.edu.au'
+    url: 'mailto:eric.muller@anu.edu.au'
     label: E-mail Me
   - icon: brands/x
     url: https://x.com/Eric__Muller
@@ -45,7 +45,7 @@ profiles:
   #   url: https://scholar.google.com/
   - icon: academicons/orcid
     url: https://orcid.org/0000-0001-5621-1577
-  - icon: "custom/researchgate2"
+  - icon: "custom/researchgate3"
     url: https://www.researchgate.net/profile/Eric-Muller-14
 
 interests:
