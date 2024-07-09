@@ -12,6 +12,7 @@ sections:
   - block: collection
     content:
       title: All Publications
+      text: ""
       filters:
         folders:
           - publication
