@@ -57,7 +57,7 @@ education:
   - area: PhD Candidate - Machine Learning Methods for Cold HI
     institution: The Australian National University
     date_start: 2024-01-20
-    date_end: Current
+    date_end: 2027-06-31
     summary: |
       Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     button:
