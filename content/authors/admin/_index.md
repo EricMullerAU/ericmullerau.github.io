@@ -105,7 +105,7 @@ skills:
       - name: Python
         description: ''
         percent: 80
-        icon: devicon/python #code-bracket
+        icon: devicon/python-plain #code-bracket
       - name: PyTorch
         description: ''
         percent: 60
