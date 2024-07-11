@@ -155,4 +155,4 @@ skills:
 
 ## About Me
 
-Hi! I'm Eric, a PhD candidate at the Australian National University, researching machine learning methods for predicting cold gas fractions from {{< math >}}$\textsc{HI}${{< /math >}} spectra. Hɪ
+Hi! I'm Eric, a PhD candidate at [The Australian National University](https://rsaa.anu.edu.au/people/eric-muller), researching machine learning methods for predicting cold gas fractions from HI spectra, under [Dr. Hiep Nguyen](https://rsaa.anu.edu.au/people/dr-hiep-nguyen). I'm particularly interested in machine learning methods for quantifying the uncertainties on predictions and using these for real science. In 2023 I finished my Honours in astrophysics at the ANU, where I worked on characterising the spatial variations of dust in galaxies from the [MAGPI](https://magpisurvey.org/index.html) and [SAMI](https://sami-survey.org/) surveys, under [Dr. Andrew Battisti](https://sites.google.com/view/ajbattisti/home).
