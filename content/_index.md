@@ -26,7 +26,7 @@ sections:
           # Add your image background to `assets/media/`.
           filename: NasaM83.jpg #stacked-peaks.svg
           filters:
-            brightness: 1.0
+            brightness: 0.3
           size: cover
           position: center
           parallax: false
@@ -42,8 +42,6 @@ sections:
         Please reach out to collaborate 😃
     design:
       columns: '1'
-      background:
-        color: black
   # - block: collection
   #   id: papers
   #   content:
