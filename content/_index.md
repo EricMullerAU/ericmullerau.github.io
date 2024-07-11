@@ -60,9 +60,19 @@ sections:
       filters:
         folders:
           - publications
-        exclude_featured: false
+        featured_only: true
     design:
       view: citation
+  - block: resume-skills
+    content:
+      title: Skills & Hobbies
+      username: admin
+    design:
+      show_skill_percentage: false
+  - block: resume-awards
+    content:
+      title: Awards
+      username: admin
   # - block: collection
   #   id: talks
   #   content:
