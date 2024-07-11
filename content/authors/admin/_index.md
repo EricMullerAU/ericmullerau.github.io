@@ -106,40 +106,36 @@ skills:
         description: ''
         percent: 80
         icon: devicon/python
-      - name: PyTorch
-        description: ''
-        percent: 60
-        icon: devicon/pytorch
       - name: Data Science
         description: ''
         percent: 100
         icon: chart-bar
-      - name: SQL
+      - name: bash
         description: ''
-        percent: 40
-        icon: circle-stack
+        percent: 50
+        icon: devicon/bash
   - name: Machine Learning
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Hiking
+      - name: PyTorch
         description: ''
         percent: 60
-        icon: person-simple-walk
-      - name: Cats
+        icon: devicon/pytorch
+      - name: Scikit-Learn
         description: ''
-        percent: 100
-        icon: cat
-      - name: Photography
+        percent: 40
+        icon: devicon/scikitlearn
+      - name: tensorflow
         description: ''
-        percent: 80
-        icon: camera
+        percent: 20
+        icon: devicon/tensorflow
   - name: Astronomy
     items:
       - name: TOPCAT
         description: ''
         percent: 25
-        icon: heroicons/sparkle
+        icon: heroicons/sparkles
 
 # languages:
 #   - name: English
