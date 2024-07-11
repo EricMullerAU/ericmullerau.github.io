@@ -155,4 +155,4 @@ skills:
 
 ## About Me
 
-Hi! I'm Eric, a PhD candidate at the Australian National University, researching machine learning methods for predicting cold gas fractions from {{< math >}}$\textsc{HI}${{< /math >}} spectra.
+Hi! I'm Eric, a PhD candidate at the Australian National University, researching machine learning methods for predicting cold gas fractions from {{< math >}}$\textsc{HI}${{< /math >}} spectra. Hɪ
