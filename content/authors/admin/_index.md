@@ -100,12 +100,12 @@ education:
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
-  - name: Technical Skills
+  - name: General
     items:
       - name: Python
         description: ''
         percent: 80
-        icon: devicon/python-plain #code-bracket
+        icon: devicon/python
       - name: PyTorch
         description: ''
         percent: 60
@@ -118,7 +118,7 @@ skills:
         description: ''
         percent: 40
         icon: circle-stack
-  - name: Hobbies
+  - name: Machine Learning
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
@@ -134,6 +134,12 @@ skills:
         description: ''
         percent: 80
         icon: camera
+  - name: Astronomy
+    items:
+      - name: TOPCAT
+        description: ''
+        percent: 25
+        icon: heroicons/sparkle
 
 # languages:
 #   - name: English
