@@ -45,7 +45,7 @@ profiles:
   #   url: https://scholar.google.com/
   - icon: academicons/orcid
     url: https://orcid.org/0000-0001-5621-1577
-  - icon: "custom/researchgate3"
+  - icon: academicons/researchgate#"custom/researchgate3"
     url: https://www.researchgate.net/profile/Eric-Muller-14
 
 interests:
@@ -59,7 +59,7 @@ education:
     date_start: 2024-01-20
     date_end: 2027-06-30
     summary: |
-      Thesis on machine learning methods for extracting cold, warm, and unstable gas fractions from HI emission spectra. Supervised by [Dr Hiep Nguen](https://rsaa.anu.edu.au/people/dr-hiep-nguyen)
+      Thesis on machine learning methods for extracting cold, warm, and unstable gas fractions from HI emission spectra. Supervised by [Dr. Hiep Nguyen](https://rsaa.anu.edu.au/people/dr-hiep-nguyen)
     # button:
     #   text: 'Read Thesis'
     #   url: 'https://example.com'
@@ -68,7 +68,7 @@ education:
     date_start: 2020-03-01
     date_end: 2023-10-31
     summary: |
-      First class honours, GPA of 6.3
+      First class Honours, GPA of 6.3. Thesis on characterising the spatial variation of dust attenuation in galaxies. Supervised by [Dr. Andrew Battisti](https://sites.google.com/view/ajbattisti/home)
 
       - Astronomy and Astrophysics major
       - Advanced Physics specialisation
@@ -105,7 +105,11 @@ skills:
       - name: Python
         description: ''
         percent: 80
-        icon: code-bracket
+        icon: devicon/python #code-bracket
+      - name: PyTorch
+        description: ''
+        percent: 60
+        icon: devicon/pytorch
       - name: Data Science
         description: ''
         percent: 100
