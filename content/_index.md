@@ -65,7 +65,7 @@ sections:
       view: article-grid
       columns: 3
       fill_image: false
-      width: 150%
+      width: 600px
   - block: collection
     content:
       title: Recent Publications
