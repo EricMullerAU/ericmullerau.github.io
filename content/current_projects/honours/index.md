@@ -1,7 +1,7 @@
 ---
 title: Dust Attenuation in SAMI & MAGPI
 date: 2023-01-30
-external_link: https://github.com/pytorch/pytorch
+featured: true
 tags:
   - Python
   - MAGPI
