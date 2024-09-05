@@ -59,12 +59,12 @@ sections:
       text: ""
       filters:
         folders:
-          - project
-        featured_only: true
+          - current_projects
+        featured_only: false
     design:
       view: article-grid
       columns: 3
-      fill_image: false
+      fill_image: true
       custom_css:
         - width: 100%  # Or specify a custom width like '90%' or '1200px'
         - max-width: 1200px  # Set the max-width for the block

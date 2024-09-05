@@ -18,7 +18,7 @@ sections:
           - current_projects
     design:
       view: article-grid
-      fill_image: false
+      fill_image: true
       columns: 3
   - block: collection
     content:
@@ -29,6 +29,6 @@ sections:
           - past_projects
     design:
       view: article-grid
-      fill_image: false
+      fill_image: true
       columns: 3
 ---
