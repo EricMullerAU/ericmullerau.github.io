@@ -66,8 +66,8 @@ sections:
       columns: 3
       fill_image: false
       custom_css:
-        - width: 200%
-
+        - width: 100%  # Or specify a custom width like '90%' or '1200px'
+        - max-width: 1200px  # Set the max-width for the block
   - block: collection
     content:
       title: Recent Publications
