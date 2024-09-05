@@ -53,18 +53,20 @@ sections:
   #   design:
   #     view: article-grid
   #     columns: 2
-  # - block: collection
-  #   content:
-  #     title: Current Projects
-  #     text: ""
-  #     filters:
-  #       folders:
-  #         - project
-  #       featured_only: true
-  #   design:
-  #     view: article-grid
-  #     columns: 3
-  #     fill_image: false
+  - block: collection
+    content:
+      title: Current Projects
+      text: ""
+      filters:
+        folders:
+          - project
+        featured_only: true
+    design:
+      view: article-grid
+      columns: 3
+      fill_image: false
+      custom_css:
+        width: 200%
   - block: collection
     content:
       title: Recent Publications
