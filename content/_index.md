@@ -55,6 +55,16 @@ sections:
   #     columns: 2
   - block: collection
     content:
+      title: Current Projects
+      text: ""
+      filters:
+        folders:
+          - project
+          featured_only: true
+    # design:
+    #   view: 
+  - block: collection
+    content:
       title: Recent Publications
       text: ""
       filters:
