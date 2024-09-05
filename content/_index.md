@@ -61,8 +61,9 @@ sections:
         folders:
           - project
         featured_only: true
-    # design:
-    #   view: 
+    design:
+      view: article-grid
+      columns: 3
   - block: collection
     content:
       title: Recent Publications
@@ -73,12 +74,12 @@ sections:
         featured_only: true
     design:
       view: citation
-  - block: resume-skills
-    content:
-      title: Skills
-      username: admin
-    design:
-      show_skill_percentage: false
+  # - block: resume-skills
+  #   content:
+  #     title: Skills
+  #     username: admin
+  #   design:
+  #     show_skill_percentage: false
   - block: resume-awards
     content:
       title: Awards
