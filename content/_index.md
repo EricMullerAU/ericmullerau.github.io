@@ -66,7 +66,8 @@ sections:
       columns: 3
       fill_image: false
       custom_css:
-        width: 200%
+        - width: 200%
+
   - block: collection
     content:
       title: Recent Publications
