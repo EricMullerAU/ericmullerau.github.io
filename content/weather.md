@@ -7,6 +7,9 @@ date: 2024-09-16
 # This page displays weather forecasts and aurora predictions NON HTML VERSION.
 type: landing
 
+advanced:
+  css_style: "text-align: center;"
+
 sections:
   - block: markdown
     content:
@@ -31,9 +34,5 @@ sections:
 
         <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75237" type="application/javascript"></script>
 
-        <div style="text-align: center;>
-          <small>Weather warnings are provided by BOM via 
-          <a href="https://www.willyweather.com.au">WillyWeather</a>
-          </small>
-        </div>
+        <small>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></small>
 ---
