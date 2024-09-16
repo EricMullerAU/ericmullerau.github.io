@@ -24,20 +24,20 @@ sections:
       text: ""
       filters:
         folders:
-          - current_projects
+          - publications
     design:
       view: article-grid
       fill_image: true
       columns: 3
-  - block: collection
-    content:
-      title: Past Projects
-      text: ""
-      filters:
-        folders:
-          - past_projects
-    design:
-      view: article-grid
-      fill_image: true
-      columns: 3
+  # - block: collection
+  #   content:
+  #     title: Past Projects
+  #     text: ""
+  #     filters:
+  #       folders:
+  #         - past_projects
+  #   design:
+  #     view: article-grid
+  #     fill_image: true
+  #     columns: 3
 ---
