@@ -18,17 +18,17 @@ design:
 
 # Page sections
 sections:
-  - block: collection
-    content:
-      title: Publications
-      text: ""
-      filters:
-        folders:
-          - publications
-    design:
-      view: article-grid
-      fill_image: true
-      columns: 3
+  # - block: collection
+  #   content:
+  #     title: Publications
+  #     text: ""
+  #     filters:
+  #       folders:
+  #         - publications
+  #   design:
+  #     view: article-grid
+  #     fill_image: true
+  #     columns: 3
   # - block: collection
   #   content:
   #     title: Past Projects
@@ -40,4 +40,14 @@ sections:
   #     view: article-grid
   #     fill_image: true
   #     columns: 3
+  # - block: collection
+  #   content:
+  #     title: Recent Publications
+  #     text: ""
+  #     filters:
+  #       folders:
+  #         - publications
+  #       featured_only: true
+  #   design:
+  #     view: citation
 ---
