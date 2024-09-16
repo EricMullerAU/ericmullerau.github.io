@@ -11,6 +11,7 @@ sections:
   - block: markdown
     design:
       columns: '1'
+      css_style: 'text-align: center;'
     content:
       title: Forecasts
       subtitle: This page displays various weather forecasts that I like having collated into one webpage.
