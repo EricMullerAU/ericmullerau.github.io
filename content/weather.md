@@ -31,5 +31,9 @@ sections:
 
         <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75237" type="application/javascript"></script>
 
-        <div style="text-align: center;><small>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></small></div>
+        <div style="text-align: center;>
+          <small>Weather warnings are provided by BOM via 
+          <a href="https://www.willyweather.com.au">WillyWeather</a>
+          </small>
+        </div>
 ---
