@@ -16,7 +16,7 @@ sections:
       title: Forecasts
       subtitle: This page displays various weather forecasts that I like having collated into one webpage.
       text: |
-        <div style="width:800px; margin:0 auto;">
+        <div style="width:200px; margin:0 auto;">
           <div style="float:left;">
             <iframe src="https://free.timeanddate.com/clock/i9jtnvu4/tlau/fc111/bo2/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="123" height="48"></iframe>
           </div>
