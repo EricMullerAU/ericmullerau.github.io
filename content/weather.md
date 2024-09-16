@@ -17,14 +17,13 @@ sections:
       subtitle: This page displays various weather forecasts that I like having collated into one webpage.
       text: |
         <iframe src="https://free.timeanddate.com/clock/i9jtnvu4/tlau/fc111/bo2/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="123" height="48"></iframe><iframe src="https://free.timeanddate.com/clock/i9jtnvu4/tlau/fc111/bo2/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="123" height="48"></iframe>
-        {style="color: red"}
 
         <div style="width:1125px;">
           <div style="float:left;">
-            <iframe width="560px" height="315px" src="https://www.youtube.com/embed/1ofKJZb-1eY" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://free.timeanddate.com/clock/i9jtnvu4/tlau/fc111/bo2/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="123" height="48"></iframe>
           </div>
           <div style="float:right;">
-            <iframe width="560px" height="315px" src="https://www.youtube.com/embed/BJZm-BAg82g" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://free.timeanddate.com/clock/i9jtnvu4/tlau/fc111/bo2/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="123" height="48"></iframe>
           </div>
           <div style="clear:both;"></div>
         </div>
