@@ -7,11 +7,10 @@ date: 2024-09-16
 # This page displays weather forecasts and aurora predictions NON HTML VERSION.
 type: landing
 
-advanced:
-  css_style: "text-align: center;"
-
 sections:
   - block: markdown
+    design:
+      columns: '1'
     content:
       title: Forecasts
       subtitle: This page displays various weather forecasts that I like having collated into one webpage.
