@@ -16,7 +16,7 @@ sections:
       title: Forecasts
       subtitle: This page displays various weather forecasts that I like having collated into one webpage.
       text: |
-        <iframe style="display: block;" src="https://free.timeanddate.com/clock/i9jtnvu4/tlau/fc111/bo2/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="123" height="48"></iframe>
+        <iframe style="display: block;" src="https://free.timeanddate.com/clock/i9jtnvu4/tlau/fc111/bo2/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="123" height="48"></iframe><iframe style="display: block;" src="https://free.timeanddate.com/clock/i9jtnvu4/tlau/fc111/bo2/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="123" height="48"></iframe>
 
         <iframe width="650" height="650" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-36.058&lon=149.26&detailLat=-35.251&detailLon=149.124&marker=true&message=true" frameborder="0"></iframe>
 
