@@ -22,6 +22,9 @@ main:
   - name: Projects
     url: projects/
     weight: 30
+  - name: Weather
+    url: weather
+    weight: 50
   # - name: Teaching
   #   url: teaching/
   #   weight: 40
