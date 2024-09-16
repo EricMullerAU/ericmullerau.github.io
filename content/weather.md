@@ -18,20 +18,20 @@ sections:
       text: |
         <div style="width:400px; margin:0 auto;">
           <div style="float:left;">
-            <iframe src="https://free.timeanddate.com/clock/i9jtnvu4/tlau/fc111/bo2/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="123" height="48"></iframe>
+            <iframe src="https://free.timeanddate.com/clock/i9jtr4t7/n57/tlau/fs20/fcfff/tc111/bacfff/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="166" height="60"></iframe>
           </div>
           <div style="float:right;">
-            <iframe src="https://free.timeanddate.com/clock/i9jtnvu4/tlau/fc111/bo2/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="123" height="48"></iframe>
+            <iframe src="https://free.timeanddate.com/clock/i9jtr4t7/tlau/fs20/fcfff/tc111/bacfff/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="166" height="60"></iframe>
           </div>
           <div style="clear:both;"></div>
         </div>
 
         <iframe width="650" height="650" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-36.058&lon=149.26&detailLat=-35.251&detailLon=149.124&marker=true&message=true" frameborder="0"></iframe>
 
-        <div style="width:400px; margin:0 auto;">
+        <div style="width:800px; margin:0 auto;">
         <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=surface&lat=-35.514&lon=149.03" frameborder="0"></iframe>
         </div>
-        
+
         <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=100m&lat=-35.514&lon=149.03" frameborder="0"></iframe>
 
         <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=950h&lat=-35.514&lon=149.03" frameborder="0"></iframe>
