@@ -29,5 +29,7 @@ sections:
 
         <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75236" type="application/javascript"></script>
 
-        Weather warnings are provided by BOM via [WillyWeather](https://www.willyweather.com.au)
+        <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75237" type="application/javascript"></script>
+
+        <small>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></small>
 ---
