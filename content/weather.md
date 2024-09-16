@@ -28,13 +28,21 @@ sections:
 
         <iframe width="650" height="650" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-36.058&lon=149.26&detailLat=-35.251&detailLon=149.124&marker=true&message=true" frameborder="0"></iframe>
 
-        <div style="margin: auto;">
+        <div style="margin:0 auto;">
+        <div>
         <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=surface&lat=-35.514&lon=149.03" frameborder="0"></iframe>
         </div>
+        </div>
 
-        <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=100m&lat=-35.514&lon=149.03" frameborder="0"></iframe>
-
-        <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=950h&lat=-35.514&lon=149.03" frameborder="0"></iframe>
+        <div style="width:400px; margin:0 auto;">
+          <div style="float:left;">
+            <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=100m&lat=-35.514&lon=149.03" frameborder="0"></iframe>
+          </div>
+          <div style="float:right;">
+            <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=950h&lat=-35.514&lon=149.03" frameborder="0"></iframe>
+          </div>
+          <div style="clear:both;"></div>
+        </div>
 
         <div style="width: 650px;"><iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=75234" width="650" height="520" frameborder="0"  scrolling="no"></iframe><a style="z-index: 1;position: relative;margin: -20px 0 0 0;text-indent: -9999em;display: block;height: 20px" href="https://www.willyweather.com.au/act/canberra/oconnor.html" rel="nofollow">Today's weather in OConnor</a></div>
 
