@@ -34,7 +34,7 @@ sections:
         </div>
         </div>
 
-        <div style="width:600px; margin:0 auto;">
+        <div style="width:620px; margin:0 auto;">
           <div style="float:left;">
             <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=100m&lat=-35.514&lon=149.03" frameborder="0"></iframe>
           </div>
