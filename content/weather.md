@@ -58,39 +58,33 @@ sections:
           <div class="interaction-blocker" id="blocker" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1); z-index: 10;"></div>
         </div>
 
-        <div style="width:300px; margin:0 auto; margin-bottom:30px;">
-          <div style="float:left;">
-            <span style="margin-right: 10px; font-size: small; margin:0 auto;">Enable Windy interaction:</span>
-          </div>
-          <div style="float:right;">
-            <label style="position: relative; display: inline-block; width: 35px; height: 20px; margin:0 auto;">
-              <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
-              <span style="
-                position: absolute;
-                cursor: pointer;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: #ccc;
-                transition: .4s;
-                border-radius: 20px;
-              "></span>
-              <span style="
-                position: absolute;
-                background-color: white;
-                border-radius: 50%;
-                height: 16px;
-                width: 16px;
-                left: 2px;
-                bottom: 2px;
-                transition: .4s;
-                transform: translateX(0);
-              "></span>
-            </label>
-          </div>
-          <div style="clear:both;"></div>
-        </div>
+        <label style="position: relative; display: inline-flex; align-items: center; width: 85px; height: 20px; margin:0 auto;">
+          <span style="margin-right: 10px;">Enable Windy interaction</span>
+          <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
+          <span style="
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+          "></span>
+          <span style="
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            transition: .4s;
+            transform: translateX(0);
+          "></span>
+        </label>
+
         
 
         <p><strong>Space Weather</strong></p>
