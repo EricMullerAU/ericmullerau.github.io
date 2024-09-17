@@ -60,28 +60,10 @@ sections:
 
 
 
-        <label class="switch">
-          <input type="checkbox" id="toggleInteraction">
-          <span class="slider"></span>
-        </label>
-        <style>
-          /* The switch - the box around the slider */
-          .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-          }
-        
-          /* Hide default HTML checkbox */
-          .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-          }
-        
-          /* The slider */
-          .slider {
+        <!-- Sliding Switch -->
+        <label style="position: relative; display: inline-block; width: 60px; height: 34px;">
+          <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
+          <span style="
             position: absolute;
             cursor: pointer;
             top: 0;
@@ -89,32 +71,22 @@ sections:
             right: 0;
             bottom: 0;
             background-color: #ccc;
-            transition: 0.4s;
+            transition: .4s;
             border-radius: 34px;
-          }
-        
-          .slider:before {
+          "></span>
+          <span style="
             position: absolute;
-            content: "";
+            background-color: white;
+            border-radius: 50%;
             height: 26px;
             width: 26px;
             left: 4px;
             bottom: 4px;
-            background-color: white;
-            transition: 0.4s;
-            border-radius: 50%;
-          }
-        
-          /* When checked, change the background color */
-          input:checked + .slider {
-            background-color: #2196F3;
-          }
-        
-          /* Move the slider (circle) when checked */
-          input:checked + .slider:before {
-            transform: translateX(26px);
-          }
-        </style>
+            transition: .4s;
+            transform: translateX(0);
+          "></span>
+        </label>
+
         
 
         <p><strong>Space Weather</strong></p>
@@ -420,24 +392,37 @@ sections:
         </script>
 
         <script>
-          // Initial state: interaction is blocked
-          let interactionEnabled = false;
+        // Initial state: interaction is blocked
+        let interactionEnabled = false;
 
-          document.getElementById('toggleInteraction').addEventListener('change', function() {
-              const blocker = document.getElementById('blocker');
-              
-              if (interactionEnabled) {
-                  // Disable interaction (show the blocker)
-                  blocker.style.display = 'block';
-              } else {
-                  // Enable interaction (hide the blocker)
-                  blocker.style.display = 'none';
-              }
-              
-              // Toggle state
-              interactionEnabled = !interactionEnabled;
-          });
+        document.getElementById('toggleInteraction').addEventListener('change', function() {
+            const blocker = document.getElementById('blocker');
+            const slider = this.nextElementSibling;
+            const knob = slider.nextElementSibling;
+
+            if (this.checked) {
+                // Enable interaction (hide the blocker)
+                blocker.style.display = 'none';
+                this.nextElementSibling.style.backgroundColor = '#2196F3'; // Change background color when enabled
+                knob.style.transform = 'translateX(26px)'; // Move knob to the right
+                this.nextElementSibling.style.transition = 'background-color 0.4s';
+                knob.style.transition = 'transform 0.4s';
+                this.nextElementSibling.style.borderRadius = '34px';
+            } else {
+                // Disable interaction (show the blocker)
+                blocker.style.display = 'block';
+                this.nextElementSibling.style.backgroundColor = '#ccc'; // Change background color when disabled
+                knob.style.transform = 'translateX(0)'; // Move knob to the left
+                this.nextElementSibling.style.transition = 'background-color 0.4s';
+                knob.style.transition = 'transform 0.4s';
+                this.nextElementSibling.style.borderRadius = '34px';
+            }
+            
+            // Toggle state
+            interactionEnabled = !interactionEnabled;
+        });
         </script>
+
 
         <!-- Image refresh script -->
         <script>
