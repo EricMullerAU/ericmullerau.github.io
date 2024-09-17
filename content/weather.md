@@ -33,6 +33,21 @@ sections:
           <div style="clear:both;"></div>
         </div>
 
+        <!-- Twilight times -->
+        <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+          <h1>Twilight Times for Today</h1>
+    
+          <p>Astronomical Dawn: <span id="astrDawn"></span></p>
+          <p>Nautical Dawn: <span id="nautDawn"></span></p>
+          <p>Civil Dawn: <span id="civDawn"></span></p>
+          <p>Sunrise: <span id="sunrise"></span></p>
+          
+          <p>Sunset: <span id="sunset"></span></p>
+          <p>Civil Dusk: <span id="civDusk"></span></p>
+          <p>Nautical Dusk: <span id="nautDusk"></span></p>
+          <p>Astronomical Dusk: <span id="astrDusk"></span></p>
+        </div>
+
         <!-- WillyWeather forecast -->
         <div style="width:620px; margin:0 auto; margin-bottom:20px;">
           <div style="width: 620px;">
@@ -152,10 +167,12 @@ sections:
         </div>
 
         <!-- AAT Pano -->
+        <!-- Doesn't work anymore. Fingers crossed for a replacement sky cam soon.
         <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
           <img id="AATPano" src="https://aat-ops.anu.edu.au/skycam/telescope/horizon.jpg" alt="AAT Pano Image" style="width: 100%; height: auto;">
           <button class="refresh-button" onclick="refreshImage('AATPano')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
         </div>
+        -->
 
         <p><strong>MSO Cams</strong></p>
 
@@ -440,6 +457,126 @@ sections:
         });
         </script>
 
+        <!-- Twilight calculator -->
+        <script>
+          class TwilightCalculator {
+            constructor(lat = -25.2802, long = 149.131, timeZone = 10) {
+              this.lat = lat;
+              this.long = long;
+              this.timeZone = timeZone;
+            }
+
+            solarElevation(minPastMidnight, date, offset = 0) {
+              const julianDay = Math.floor(date.getTime() / 86400000) + 2440587.5;
+              const julianDate = julianDay - this.timeZone / 24 + minPastMidnight / 1440;
+              const julianCentury = (julianDate - 2451545) / 36525;
+
+              const GMLS = (280.46646 + julianCentury * (36000.76983 + julianCentury * 0.0003032)) % 360;
+              const GMAS = 357.52911 + julianCentury * (35999.05029 - 0.0001537 * julianCentury);
+              const eccentEarthOrbit = 0.016708634 - julianCentury * (0.000042037 + 0.0000001267 * julianCentury);
+
+              const sunEqOfCtr = Math.sin(this.degToRad(GMAS)) * (1.914602 - julianCentury * (0.004817 + 0.000014 * julianCentury)) +
+                Math.sin(this.degToRad(2 * GMAS)) * (0.019993 - 0.000101 * julianCentury) +
+                Math.sin(this.degToRad(3 * GMAS)) * 0.000289;
+
+              const sunTrueLong = GMLS + sunEqOfCtr;
+              const sunAppLong = sunTrueLong - 0.00569 - 0.00478 * Math.sin(this.degToRad(125.04 - 1934.136 * julianCentury));
+
+              const meanObliqEcliptic = 23 + (26 + (21.448 - julianCentury * (46.815 + julianCentury * (0.00059 - julianCentury * 0.001813))) / 60) / 60;
+              const obliqCorr = meanObliqEcliptic + 0.00256 * Math.cos(this.degToRad(125.04 - 1934.136 * julianCentury));
+
+              const sunDec = this.radToDeg(Math.asin(Math.sin(this.degToRad(obliqCorr)) * Math.sin(this.degToRad(sunAppLong))));
+
+              const varY = Math.tan(this.degToRad(obliqCorr / 2)) ** 2;
+              const eqOfTime = 4 * this.radToDeg(varY * Math.sin(2 * this.degToRad(GMLS)) - 
+                2 * eccentEarthOrbit * Math.sin(this.degToRad(GMAS)) + 
+                4 * eccentEarthOrbit * varY * Math.sin(this.degToRad(GMAS)) * Math.cos(2 * this.degToRad(GMLS)) - 
+                0.5 * varY ** 2 * Math.sin(4 * this.degToRad(GMLS)) - 
+                1.25 * eccentEarthOrbit ** 2 * Math.sin(2 * this.degToRad(GMAS)));
+
+              let TST = (minPastMidnight + eqOfTime + 4 * this.long - 60 * this.timeZone) % 1440;
+              let hourAngle = (TST / 4 < 0) ? TST / 4 + 180 : TST / 4 - 180;
+
+              const solarZenithAngle = this.radToDeg(Math.acos(Math.sin(this.degToRad(this.lat)) * Math.sin(this.degToRad(sunDec)) + 
+                Math.cos(this.degToRad(this.lat)) * Math.cos(this.degToRad(sunDec)) * Math.cos(this.degToRad(hourAngle))));
+
+              let solarElevationAngle = 90 - solarZenithAngle;
+
+              // Atmospheric correction
+              let atmCorr = 0;
+              if (solarElevationAngle <= -0.575) {
+                atmCorr = (-20.772 / Math.tan(this.degToRad(solarZenithAngle))) / 3600;
+              } else if (solarElevationAngle <= 5) {
+                atmCorr = (1735 + solarElevationAngle * (-518.2 + solarElevationAngle * (103.4 + solarElevationAngle * (-12.79 + solarElevationAngle * 0.711)))) / 3600;
+              } else if (solarElevationAngle <= 85) {
+                atmCorr = (58.1 / Math.tan(this.degToRad(solarElevationAngle)) - 0.07 / Math.tan(this.degToRad(solarElevationAngle)) ** 3 + 0.000086 / Math.tan(this.degToRad(solarElevationAngle)) ** 5) / 3600;
+              }
+                
+              return solarElevationAngle + atmCorr + offset;
+            }
+
+            degToRad(deg) {
+                return deg * Math.PI / 180;
+            }
+
+            radToDeg(rad) {
+                return rad * 180 / Math.PI;
+            }
+
+            minToTime(mins) {
+                const hour = Math.floor(mins / 60);
+                const minute = Math.floor(mins % 60);
+                const second = Math.floor(((mins % 60) * 60) % 60);
+                return { hour, minute, second };
+            }
+
+            brentq(func, a, b, args) {
+                // Implement a root-finding algorithm here. In practice, Brent's method needs to be ported
+                // or use an existing JavaScript library for numerical solving.
+                // For simplicity, this part will need to be handled carefully or with a library.
+            }
+
+            getTwilights(date) {
+                // Dummy implementation for the twilight times using brentq placeholder
+                const astrDawn = this.brentq(this.solarElevation.bind(this), 0.0, 720.0, [date, 18]);
+                const nautDawn = this.brentq(this.solarElevation.bind(this), 0.0, 720.0, [date, 12]);
+                const civDawn = this.brentq(this.solarElevation.bind(this), 0.0, 720.0, [date, 6]);
+                const sunrise = this.brentq(this.solarElevation.bind(this), 0.0, 720.0, [date]);
+
+                const sunset = this.brentq(this.solarElevation.bind(this), 720.0, 1440.0, [date]);
+                const civDusk = this.brentq(this.solarElevation.bind(this), 720.0, 1440.0, [date, 6]);
+                const nautDusk = this.brentq(this.solarElevation.bind(this), 720.0, 1440.0, [date, 12]);
+                const astrDusk = this.brentq(this.solarElevation.bind(this), 720.0, 1440.0, [date, 18]);
+
+                return [this.minToTime(astrDawn), this.minToTime(nautDawn), this.minToTime(civDawn), this.minToTime(sunrise), this.minToTime(sunset), this.minToTime(civDusk), this.minToTime(nautDusk), this.minToTime(astrDusk)];
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          // Create an instance of TwilightCalculator
+          const calculator = new TwilightCalculator();
+
+          // Get the current date
+          const today = new Date();
+
+          // Call the getTwilights function
+          const twilightTimes = calculator.getTwilights(today);
+
+          // Extract each time from the result and format it
+          const formatTime = (time) => `${time.hour.toString().padStart(2, '0')}:${time.minute.toString().padStart(2, '0')}:${time.second.toString().padStart(2, '0')}`;
+
+          // Get the twilight times and inject them into HTML
+          document.getElementById('astrDawn').innerText = formatTime(twilightTimes[0]);
+          document.getElementById('nautDawn').innerText = formatTime(twilightTimes[1]);
+          document.getElementById('civDawn').innerText = formatTime(twilightTimes[2]);
+          document.getElementById('sunrise').innerText = formatTime(twilightTimes[3]);
+          
+          document.getElementById('sunset').innerText = formatTime(twilightTimes[4]);
+          document.getElementById('civDusk').innerText = formatTime(twilightTimes[5]);
+          document.getElementById('nautDusk').innerText = formatTime(twilightTimes[6]);
+          document.getElementById('astrDusk').innerText = formatTime(twilightTimes[7]);
+          });
+        </script>
 
         <!-- Image refresh script -->
         <script>
