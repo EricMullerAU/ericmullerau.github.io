@@ -46,6 +46,8 @@ sections:
           <p>Civil Dusk: <span id="civDusk"></span></p>
           <p>Nautical Dusk: <span id="nautDusk"></span></p>
           <p>Astronomical Dusk: <span id="astrDusk"></span></p>
+
+          <p>debug value: <span id="debugVal"></span></p>
         </div>
 
         <!-- WillyWeather forecast -->
@@ -562,6 +564,9 @@ sections:
           // Call the getTwilights function
           const twilightTimes = calculator.getTwilights(today);
 
+          // testing
+          const sunElevation = calculator.solarElevation(635, today);
+
           // Extract each time from the result and format it
           const formatTime = (time) => `${time.hour.toString().padStart(2, '0')}:${time.minute.toString().padStart(2, '0')}:${time.second.toString().padStart(2, '0')}`;
 
@@ -575,6 +580,8 @@ sections:
           document.getElementById('civDusk').innerText = formatTime(twilightTimes[5]);
           document.getElementById('nautDusk').innerText = formatTime(twilightTimes[6]);
           document.getElementById('astrDusk').innerText = formatTime(twilightTimes[7]);
+
+          document.getElementById('debugVal').innerText = sunElevation.toString()
           });
         </script>
 
