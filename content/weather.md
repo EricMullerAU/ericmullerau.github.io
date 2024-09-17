@@ -31,13 +31,15 @@ sections:
           <div style="clear:both;"></div>
         </div>
 
+        <!-- WillyWeather forecast -->
+        <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+          <div style="width: 620px;">
+            <iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=75240" width="620" height="520" frameborder="0"  scrolling="no"></iframe><a style="margin: -20px 0 0 0;display: block;position: relative;height: 20px;text-indent: -9999em;z-index: 1" href="https://www.willyweather.com.au/act/canberra/oconnor.html" rel="nofollow">OConnor Weather</a>
+          </div>
+        </div>
+
         <!-- Windy Maps -->
         <div class="map-container" style="position: relative; width: 100%; max-width: 620px; margin-bottom: 20px;">
-          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-            <div style="width: 620px;">
-              <iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=75240" width="620" height="520" frameborder="0"  scrolling="no"></iframe><a style="margin: -20px 0 0 0;display: block;position: relative;height: 20px;text-indent: -9999em;z-index: 1" href="https://www.willyweather.com.au/act/canberra/oconnor.html" rel="nofollow">OConnor Weather</a>
-            </div>
-          </div>
 
           <div style="width:620px; margin:0 auto; margin-bottom:20px;">
             <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-36.058&lon=149.26&detailLat=-35.251&detailLon=149.124&marker=true&message=true" frameborder="0"></iframe>
@@ -50,7 +52,8 @@ sections:
             <div style="float:right;">
               <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=950h&lat=-35.514&lon=149.03" frameborder="0"></iframe>
             </div>
-          <div style="clear:both;"></div>
+            <div style="clear:both;"></div>
+          </div>
 
           <div class="interaction-blocker" id="blocker" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1); z-index: 10;"></div>
         </div>
