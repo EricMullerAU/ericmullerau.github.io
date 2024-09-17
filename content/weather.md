@@ -65,14 +65,12 @@ sections:
         <div class="image-container">
           <img id="liveImage" src="https://aat-ops.anu.edu.au/skycam/telescope/telescope.png" alt="Skycam Image">
         </div>
-        <script>
-            function updateImage() {
-                const img = document.getElementById('liveImage');
-                img.src = `https://aat-ops.anu.edu.au/skycam/telescope/telescope.png`;
-            }
 
-            // Update image every 5 seconds
-            setInterval(updateImage, 5000);
+        <script>
+            setInterval(function() {
+                const img = document.getElementById('liveImage');
+                img.src = `https://aat-ops.anu.edu.au/skycam/telescope/telescope.png?timestamp=${new Date().getTime()}`;
+            }, 5000);
         </script>
 
 
