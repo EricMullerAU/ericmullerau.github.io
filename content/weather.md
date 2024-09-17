@@ -49,7 +49,7 @@ sections:
         <div class="animation" id="auroraAnimation" style="width:620px; margin:0 auto; text-align: center; margin-bottom:20px;">
           <canvas id="auroraCanvas" title="Click to view full screen" height="620" width="620" style="max-width: 620px;"></canvas>
           <div class="animationToolbar" style="max-width: 620px; display: flex; align-items: center; margin-top: 10px; justify-content: center;">
-            <button id="startButton" class="animationButton startButton" style="border: 1px solid white; background-color: black; color: white; width: 60px; height: 60px; margin-right: 10px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s;" title="Play or Pause">Play</button>
+            <button id="startButton" class="animationButton startButton" style="border: 1px solid white; background-color: black; color: white; width: 80px; height: 40px; margin-right: 10px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s;" title="Play or Pause">Play</button>
             <div id="progressContainer" style="position: relative; width: 100%; max-width: 500px; flex-grow: 1; position: relative; margin-left: 10px; width: 100%;">
               <input type="range" id="progressBar" value="0" max="100" style="width: 100%; -webkit-appearance: none; background: #ddd; height: 6px; border-radius: 3px;">
               <div id="timeDisplay" style="position: absolute; top: 50%; right: 0; padding: 5px; background: rgba(0,0,0,0.5); color: white; transform: translateY(-50%);"></div>
@@ -60,13 +60,14 @@ sections:
         <!-- AAT SkyCam -->
         <div class="image-container" style="width:620px; margin:0 auto; margin-bottom:20px;">
           <img id="liveImage" src="https://aat-ops.anu.edu.au/skycam/telescope/telescope.png" alt="Skycam Image">
+          <button class="refresh-button" onclick="refreshImage()" style="position: absolute;top: 10px;right: 10px;background-color: rgba(0, 0, 0, 0.5);color: white;border: none;padding: 10px;border-radius: 5px;cursor: pointer;z-index: 10;>Refresh</button>
         </div>
 
         <script>
-            setInterval(function() {
-                const img = document.getElementById('liveImage');
-                img.src = `https://aat-ops.anu.edu.au/skycam/telescope/telescope.png?timestamp=${new Date().getTime()}`;
-            }, 5000);
+          function refreshImage() {
+              const img = document.getElementById('liveImage');
+              img.src = `https://aat-ops.anu.edu.au/skycam/telescope/telescope.png?timestamp=${new Date().getTime()}`;
+          }
         </script>
 
 
