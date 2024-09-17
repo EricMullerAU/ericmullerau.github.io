@@ -90,7 +90,7 @@ sections:
         <script>
           async function fetchAuroraAlert() {
             const url = 'https://sws-data.sws.bom.gov.au/api/v1/get-aurora-alert';
-            const apiKey = '3f723484-5188-475d-bd35-d969324a4926'; // Use the provided API key
+            const apiKey = 'e7aac3e9-ed4d-4b9a-87e8-204d6a5ab680'; // Use the provided API key
             
             try {
               const response = await fetch(url, {
