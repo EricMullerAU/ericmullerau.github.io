@@ -356,8 +356,8 @@ sections:
             }
           }
 
-          // Check for new frames every 15 minutes
-          setInterval(checkForNewFrames, 15 * 60 * 1000); // 15 minutes interval
+          // Check for new frames every 5 minutes
+          setInterval(checkForNewFrames, 5 * 60 * 1000); // 15 minutes interval
 
           // Show notification for new frames
           function showNotification() {
