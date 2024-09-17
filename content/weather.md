@@ -15,7 +15,7 @@ sections:
     content:
       title: Forecasts & Weather
       text: |
-        <div style="width:400px; margin:0 auto; margin-bottom:20px;">
+        <div style="width:400px; margin:0 auto; margin-bottom:68px;">
           <div style="float:left;">
             <iframe src="https://free.timeanddate.com/clock/i9jtr4t7/n57/tlau/fs20/fcfff/tc111/bacfff/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="166" height="60"></iframe>
           </div>
@@ -51,8 +51,13 @@ sections:
         </div>
 
         <!-- Aurora Alert Data -->
-        <div id="aurora-alert-info" style="background-color: black; color: white; border: 2px solid white; padding: 15px; margin: 20px auto; width: 100%; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);">
+        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%;">
           <p>Loading Aurora Alert data...</p>
+        </div>
+
+        <!-- Aurora Watch Data -->
+        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%;">
+          <p>Loading Aurora Watch data...</p>
         </div>
 
         <!-- weather warnings -->
@@ -119,8 +124,9 @@ sections:
                 alertContainer.innerHTML = `
                   <p><strong>Aurora Alert:</strong></p>
                   <p>Issued at ${alert.start_time}</p>
-                  <p>${alert.k_aus} K index, ${alert.lat_band} latitude band.</p>
-                  <p>Description: ${alert.description}</p>
+                  <p>K index of ${alert.k_aus}, ${alert.lat_band} latitude band.</p>
+                  <p>Info:</p>
+                  <p>${alert.description}</p>
                 `;
               } else {
                 alertContainer.innerHTML = `<p>No active aurora alerts at this time.</p>`;
@@ -133,5 +139,44 @@ sections:
 
           // Call the function when the page loads
           window.onload = fetchAuroraAlert;
+        </script>
+
+        <script>
+          async function fetchAuroraWatch() {
+            const url = 'https://sws-data.sws.bom.gov.au/api/v1/get-aurora-watch';
+            const apiKey = 'e7aac3e9-ed4d-4b9a-87e8-204d6a5ab680';
+            
+            try {
+              const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ api_key: apiKey })
+              });
+              
+              const data = await response.json();
+              const watchContainer = document.getElementById('aurora-watch-info');
+
+              if (data.data.length > 0) {
+                const watch = data.data[0];
+                watchContainer.innerHTML = `
+                  <p><strong>Aurora Watch ${watch.start_date} -- ${watch.end_date}</strong></p>
+                  <p>Issued at ${watch.issue_time}</p>
+                  <p>K index of ${watch.k_aus}, ${watch.lat_band} latitude band.</p>
+                  <p>Info:</p>
+                  <p>Dominant cause of ${watch.cause}. ${watch.comments}</p>
+                `;
+              } else {
+                watchContainer.innerHTML = `<p>No active aurora watch at this time.</p>`;
+              }
+            } catch (error) {
+              console.error('Error fetching Aurora Watch data:', error);
+              document.getElementById('aurora-watch-info').innerHTML = `<p>Error loading aurora watch data.</p>`;
+            }
+          }
+
+          // Call the function when the page loads
+          window.onload = fetchAuroraWatch;
         </script>
 ---
