@@ -35,7 +35,7 @@ sections:
         <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-36.058&lon=149.26&detailLat=-35.251&detailLon=149.124&marker=true&message=true" frameborder="0"></iframe>
         </div>
 
-        <div style="width:620px; margin:0 auto;">
+        <div style="width:620px; margin:0 auto; margin-bottom:20px;">
           <div style="float:left;">
             <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=100m&lat=-35.514&lon=149.03" frameborder="0"></iframe>
           </div>
@@ -46,7 +46,7 @@ sections:
         </div>
 
         <!-- NOAA SH Aurora Forecast -->
-        <div class="animation" id="auroraAnimation" style="width:620px; margin:0 auto; text-align: center;">
+        <div class="animation" id="auroraAnimation" style="width:620px; margin:0 auto; text-align: center; margin-bottom:20px;">
           <canvas id="auroraCanvas" title="Click to view full screen" height="620" width="620" style="max-width: 620px;"></canvas>
           <div class="animationToolbar" style="max-width: 620px; display: flex; align-items: center; margin-top: 10px; justify-content: center;">
             <button id="startButton" class="animationButton startButton" style="border: 2px solid #333; background-color: #f0f0f0; color: #333; padding: 10px 20px; margin-right: 10px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s;" title="Play or Pause">Play</button>
