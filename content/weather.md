@@ -15,6 +15,8 @@ sections:
     content:
       title: Forecasts & Weather
       text: |
+        <p>Due to the volatile nature of weather in Canberra, as well as the prime view Mount Stromlo Observatory has for certain astronomical events, I've collated some forecast tools here to avoid checking multiple different apps/websites/widgets. These are implemented using free APIs, widgets, or in the case of some NOAA data, hard coded from their available image files. Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></p>
+
         <!-- Aurora update notification -->
         <div id="notification" style="display: none; position: fixed; top: 80px; left: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
           New aurora forecast frame!
@@ -177,12 +179,6 @@ sections:
 
         <!-- weather warnings -->
         <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75237" type="application/javascript"></script>
-        <div style="margin:0 auto; font-size: x-small;">
-          <p>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></p>
-        </div>
-
-
-
 
         <!-- SCRIPTS -->
 
