@@ -46,12 +46,12 @@ sections:
         </div>
 
         <!-- NASA NEO Data -->
-        <div id="nasa-neo-info">
+        <div id="nasa-neo-info" style="font-size: small;">
           <p>Loading NASA Near-Earth Object data...</p>
         </div>
 
         <!-- Aurora Alert Data -->
-        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%; font-size: small;">
+        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%; font-size: small; line-height: 3em;">
           <p>Loading Aurora Alert data...</p>
         </div>
 
@@ -62,7 +62,7 @@ sections:
 
         <!-- weather warnings -->
         <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75237" type="application/javascript"></script>
-        <div style="margin:0 auto; font-size: x-small;
+        <div style="margin:0 auto; font-size: x-small;">
           <p>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></p>
         </div>
 
