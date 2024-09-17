@@ -52,10 +52,17 @@ sections:
             <button id="startButton" class="animationButton startButton" style="border: 1px solid white; background-color: black; color: white; padding: 5px 5px; margin-right: 10px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s;" title="Play or Pause">Play</button>
             <div id="progressContainer" style="position: relative; width: 100%; max-width: 500px; flex-grow: 1; position: relative; margin-left: 10px; width: 100%;">
               <input type="range" id="progressBar" value="0" max="100" style="width: 100%; -webkit-appearance: none; background: #ddd; height: 6px; border-radius: 3px;">
-              <!-- Commenting out UTC time printing as the images provide it. <div id="timeDisplay" style="position: absolute; top: 50%; right: 0; padding: 5px; background: rgba(0,0,0,0.5); color: white; transform: translateY(-50%);"></div> --> 
+              <div id="timeDisplay" style="position: absolute; top: 50%; right: 0; padding: 5px; background: rgba(0,0,0,0.5); color: white; transform: translateY(-50%);"></div>
             </div>
           </div>
         </div>
+
+        <!-- AAT SkyCam -->
+        <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+        <iframe src="https://aat-ops.anu.edu.au/skycam/weather-large.html" width="800" height="600" style="border: none;"></iframe>
+        </div>
+
+
 
         <!-- NASA NEO Data -->
         <div id="nasa-neo-info" style="font-size: small;">
