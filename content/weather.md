@@ -51,12 +51,12 @@ sections:
         </div>
 
         <!-- Aurora Alert Data -->
-        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%; font-size: small; line-height: 3em;">
+        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%; font-size: small; line-height: 0.5em;">
           <p>Loading Aurora Alert data...</p>
         </div>
 
         <!-- Aurora Watch Data -->
-        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%; font-size: small; line-height: 1em;">
+        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%; font-size: small; line-height: 0.5em;">
           <p>Loading Aurora Watch data...</p>
         </div>
 
@@ -122,11 +122,8 @@ sections:
               if (data.data.length > 0) {
                 const alert = data.data[0];
                 alertContainer.innerHTML = `
-                  <p><strong>Aurora Alert:</strong></p>
-                  <p>Issued at ${alert.start_time}</p>
-                  <p>K index of ${alert.k_aus}, ${alert.lat_band} latitude band.</p>
-                  <p>Info:</p>
-                  <p>${alert.description}</p>
+                  <p><strong>Aurora Alert:</strong> issued at ${alert.start_time}</p>
+                  <p>K index of ${alert.k_aus}, ${alert.lat_band} latitude band. ${alert.description}</p>
                 `;
               } else {
                 alertContainer.innerHTML = `<p>No active aurora alerts at this time.</p>`;
@@ -162,7 +159,6 @@ sections:
                   <p><strong>Aurora Watch ${watch.start_date} -- ${watch.end_date}</strong></p>
                   <p>Issued at ${watch.issue_time}</p>
                   <p>K index of ${watch.k_aus}, ${watch.lat_band} latitude band.</p>
-                  <p>Info:</p>
                   <p>Dominant cause of ${watch.cause}. ${watch.comments}</p>
                 `;
               } else {
