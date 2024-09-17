@@ -55,19 +55,12 @@ sections:
         <!-- NOAA SH Aurora Forecast -->
         <div class="animation" id="auroraAnimation" style="width:620px; margin:0 auto; text-align: center; margin-bottom:20px;">
           <canvas id="auroraCanvas" title="Click to view full screen" height="620" width="620" style="max-width: 620px;"></canvas>
-          
           <div class="animationToolbar" style="max-width: 620px; display: flex; align-items: center; margin-top: 10px; justify-content: center;">
             <!-- Play/Pause Button -->
-            <button id="startButton" class="animationButton startButton" 
-                    style="border: 1px solid white; background-color: black; color: white; width: 80px; height: 40px; margin-right: 10px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s;" 
-                    title="Play or Pause">
-              Play
-            </button>
-
+            <button id="startButton" class="animationButton startButton" style="border: 1px solid white; background-color: black; color: white; width: 80px; height: 40px; margin-right: 10px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s;" title="Play or Pause">Play</button>
             <!-- Progress Bar -->
             <div id="progressContainer" style="position: relative; width: 100%; max-width: 500px; flex-grow: 1; margin-left: 10px;">
-              <input type="range" id="progressBar" value="0" max="100" 
-                    style="width: 100%; -webkit-appearance: none; background: #ddd; height: 6px; border-radius: 3px;">
+              <input type="range" id="progressBar" value="0" max="100" style="width: 100%; -webkit-appearance: none; background: #ddd; height: 6px; border-radius: 3px;">
             </div>
           </div>
         </div>
