@@ -35,7 +35,7 @@ sections:
 
         <!-- Twilight times -->
         <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-          <h1>Twilight Times for Today</h1>
+          <p><strong>Twilight Times for Today</strong></p>
     
           <p>Astronomical Dawn: <span id="astrDawn"></span></p>
           <p>Nautical Dawn: <span id="nautDawn"></span></p>
@@ -46,8 +46,6 @@ sections:
           <p>Civil Dusk: <span id="civDusk"></span></p>
           <p>Nautical Dusk: <span id="nautDusk"></span></p>
           <p>Astronomical Dusk: <span id="astrDusk"></span></p>
-
-          <p>debug value: <span id="debugVal"></span></p>
         </div>
 
         <!-- WillyWeather forecast -->
@@ -538,7 +536,7 @@ sections:
                 // For simplicity, this part will need to be handled carefully or with a library.
             }
 
-            function bisection(func, a, b, tol = 1e-6, maxIter = 100, ...args) {
+            bisection(func, a, b, tol = 1e-6, maxIter = 100, ...args) {
               // Check if the initial interval is valid
               if (func(a, ...args) * func(b, ...args) > 0) {
                 throw new Error("Invalid initial interval");
@@ -603,9 +601,6 @@ sections:
           // Call the getTwilights function
           const twilightTimes = calculator.getTwilights(today);
 
-          // testing
-          const sunElevation = calculator.solarElevation(635, today);
-
           // Extract each time from the result and format it
           const formatTime = (time) => `${time.hour.toString().padStart(2, '0')}:${time.minute.toString().padStart(2, '0')}:${time.second.toString().padStart(2, '0')}`;
 
@@ -619,8 +614,6 @@ sections:
           document.getElementById('civDusk').innerText = formatTime(twilightTimes[5]);
           document.getElementById('nautDusk').innerText = formatTime(twilightTimes[6]);
           document.getElementById('astrDusk').innerText = formatTime(twilightTimes[7]);
-
-          document.getElementById('debugVal').innerText = sunElevation.toString()
           });
         </script>
 
