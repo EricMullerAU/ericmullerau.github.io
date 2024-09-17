@@ -56,13 +56,15 @@ sections:
         </div>
 
         <!-- Aurora Watch Data -->
-        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%;">
+        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%; font-size: small; line-height: 1em;">
           <p>Loading Aurora Watch data...</p>
         </div>
 
         <!-- weather warnings -->
         <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75237" type="application/javascript"></script>
-        <x-small>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></x-small>
+        <div style="margin:0 auto; font-size: x-small;
+          <p>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></p>
+        </div>
 
 
 
