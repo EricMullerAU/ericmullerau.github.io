@@ -46,77 +46,12 @@ sections:
         </div>
 
         <p class="product-grid-cell-title">Southern Hemisphere</p>
-        <div class="animation" id="auroraAnimation">
+        <div class="animation" id="auroraAnimation" style="width:620px; margin:0 auto;">
           <canvas id="auroraCanvas" title="Click to view full screen" height="620" width="620" style="max-width: 620px;"></canvas>
           <div class="animationToolbar" style="max-width: 620px;">
             <button id="startButton" class="animationButton startButton" title="Play or Pause">Play</button>
           </div>
         </div>
-
-        <script>
-          const canvas = document.getElementById('auroraCanvas');
-          const ctx = canvas.getContext('2d');
-          let images = [];
-          let currentFrame = 0;
-          let isPlaying = false;
-          let animationInterval;
-          const baseURL = 'https://services.swpc.noaa.gov'; // Base URL for images 
-
-          // Fetch the animation data from NOAA
-          fetch('https://services.swpc.noaa.gov/products/animations/ovation_south_24h.json')
-            .then(response => response.json())
-            .then(data => {
-              images = data.map(item => {
-                const img = new Image();
-                img.src = baseURL + item.url; // Construct the full URL
-                return img;
-              });
-              // Ensure all images are loaded before starting the animation
-              let loadedImages = 0;
-              images.forEach(img => {
-                img.onload = () => {
-                  loadedImages++;
-                  if (loadedImages === images.length) {
-                    console.log('All images loaded');
-                  }
-                };
-              });
-            });
-
-          // Draw each frame
-          function drawFrame() {
-            if (images.length > 0) {
-              ctx.clearRect(0, 0, canvas.width, canvas.height);
-              ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
-              currentFrame = (currentFrame + 1) % images.length;
-            }
-          }
-
-          // Start the animation
-          function startAnimation() {
-            if (!isPlaying) {
-              isPlaying = true;
-              animationInterval = setInterval(drawFrame, 100); // Adjust speed as necessary
-              document.getElementById('startButton').innerText = 'Pause';
-            }
-          }
-
-          // Stop the animation
-          function stopAnimation() {
-            isPlaying = false;
-            clearInterval(animationInterval);
-            document.getElementById('startButton').innerText = 'Play';
-          }
-
-          // Toggle Play/Pause
-          document.getElementById('startButton').addEventListener('click', function() {
-            if (isPlaying) {
-              stopAnimation();
-            } else {
-              startAnimation();
-            }
-          });
-        </script>
 
         <!-- NASA NEO Data -->
         <div id="nasa-neo-info" style="font-size: small;">
@@ -243,6 +178,71 @@ sections:
             }
           }
 
+        </script>
+
+        <script>
+          const canvas = document.getElementById('auroraCanvas');
+          const ctx = canvas.getContext('2d');
+          let images = [];
+          let currentFrame = 0;
+          let isPlaying = false;
+          let animationInterval;
+          const baseURL = 'https://services.swpc.noaa.gov'; // Base URL for images 
+
+          // Fetch the animation data from NOAA
+          fetch('https://services.swpc.noaa.gov/products/animations/ovation_south_24h.json')
+            .then(response => response.json())
+            .then(data => {
+              images = data.map(item => {
+                const img = new Image();
+                img.src = baseURL + item.url; // Construct the full URL
+                return img;
+              });
+              // Ensure all images are loaded before starting the animation
+              let loadedImages = 0;
+              images.forEach(img => {
+                img.onload = () => {
+                  loadedImages++;
+                  if (loadedImages === images.length) {
+                    console.log('All images loaded');
+                  }
+                };
+              });
+            });
+
+          // Draw each frame
+          function drawFrame() {
+            if (images.length > 0) {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
+              currentFrame = (currentFrame + 1) % images.length;
+            }
+          }
+
+          // Start the animation
+          function startAnimation() {
+            if (!isPlaying) {
+              isPlaying = true;
+              animationInterval = setInterval(drawFrame, 100); // Adjust speed as necessary
+              document.getElementById('startButton').innerText = 'Pause';
+            }
+          }
+
+          // Stop the animation
+          function stopAnimation() {
+            isPlaying = false;
+            clearInterval(animationInterval);
+            document.getElementById('startButton').innerText = 'Play';
+          }
+
+          // Toggle Play/Pause
+          document.getElementById('startButton').addEventListener('click', function() {
+            if (isPlaying) {
+              stopAnimation();
+            } else {
+              startAnimation();
+            }
+          });
         </script>
 
         <script>
