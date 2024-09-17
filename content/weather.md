@@ -60,15 +60,26 @@ sections:
           let currentFrame = 0;
           let isPlaying = false;
           let animationInterval;
+          const baseURL = 'https://services.swpc.noaa.gov/images/animations/ovation/south/'; // Base URL for images
 
           // Fetch the animation data from NOAA
           fetch('https://services.swpc.noaa.gov/products/animations/ovation_south_24h.json')
             .then(response => response.json())
             .then(data => {
-              images = data.map(frame => {
+              images = data.map(relativePath => {
                 const img = new Image();
-                img.src = frame; // each frame is an image URL
+                img.src = baseURL + relativePath; // Construct the full URL
                 return img;
+              });
+              // Ensure all images are loaded before starting the animation
+              let loadedImages = 0;
+              images.forEach(img => {
+                img.onload = () => {
+                  loadedImages++;
+                  if (loadedImages === images.length) {
+                    console.log('All images loaded');
+                  }
+                };
               });
             });
 
