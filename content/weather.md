@@ -120,7 +120,7 @@ sections:
         <p><strong>Space Weather</strong></p>
 
         <!-- Aurora Alert Data -->
-        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
+        <div id="aurora-alert-info" style="background-color: rgb(188, 0, 0); color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
           <p>Loading Aurora Alert data...</p>
         </div>
 
