@@ -50,6 +50,10 @@ sections:
           <canvas id="auroraCanvas" title="Click to view full screen" height="620" width="620" style="max-width: 620px;"></canvas>
           <div class="animationToolbar" style="max-width: 620px;">
             <button id="startButton" class="animationButton startButton" title="Play or Pause">Play</button>
+            <div id="progressContainer" style="position: relative; width: 100%; max-width: 620px;">
+              <input type="range" id="progressBar" value="0" max="100" style="width: 100%;">
+              <div id="timeDisplay" style="position: absolute; top: 0; right: 0; padding: 5px; background: rgba(0,0,0,0.5); color: white;"></div>
+            </div>
           </div>
         </div>
 
@@ -144,6 +148,7 @@ sections:
 
         </script>
 
+        <!-- POST request to get aurora watch -->
         <script>
           async function fetchAuroraWatch() {
             const url = 'https://sws-data.sws.bom.gov.au/api/v1/get-aurora-watch';
@@ -180,10 +185,12 @@ sections:
 
         </script>
 
+        <!-- NOAA aurora forecast (southern hemisphere) animation -->
         <script>
           const canvas = document.getElementById('auroraCanvas');
           const ctx = canvas.getContext('2d');
           let images = [];
+          let imageTimes = [];
           let currentFrame = 0;
           let isPlaying = false;
           let animationInterval;
@@ -196,8 +203,10 @@ sections:
               images = data.map(item => {
                 const img = new Image();
                 img.src = baseURL + item.url; // Construct the full URL
+                imageTimes.push(item.time_tag); // Store time tags for display
                 return img;
               });
+
               // Ensure all images are loaded before starting the animation
               let loadedImages = 0;
               images.forEach(img => {
@@ -205,18 +214,36 @@ sections:
                   loadedImages++;
                   if (loadedImages === images.length) {
                     console.log('All images loaded');
+                    displayFirstImage(); // Display the first image on page load
                   }
+                };
+                img.onerror = () => {
+                  console.error('Error loading image:', img.src);
                 };
               });
             });
+
+          // Display the first image
+          function displayFirstImage() {
+            if (images.length > 0) {
+              ctx.drawImage(images[0], 0, 0, canvas.width, canvas.height);
+            }
+          }
 
           // Draw each frame
           function drawFrame() {
             if (images.length > 0) {
               ctx.clearRect(0, 0, canvas.width, canvas.height);
               ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
+              updateTimeDisplay(currentFrame);
+              document.getElementById('progressBar').value = (currentFrame / (images.length - 1)) * 100;
               currentFrame = (currentFrame + 1) % images.length;
             }
+          }
+
+          // Update the time display
+          function updateTimeDisplay(index) {
+            document.getElementById('timeDisplay').innerText = imageTimes[index];
           }
 
           // Start the animation
@@ -243,6 +270,19 @@ sections:
               startAnimation();
             }
           });
+
+          // Update frame based on progress bar
+          document.getElementById('progressBar').addEventListener('input', function(event) {
+            if (images.length > 0) {
+              currentFrame = Math.round((event.target.value / 100) * (images.length - 1));
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
+              updateTimeDisplay(currentFrame);
+            }
+          });
+
+          // Initialize the first image display
+          displayFirstImage();
         </script>
 
         <script>
