@@ -62,6 +62,19 @@ sections:
         <iframe src="https://aat-ops.anu.edu.au/skycam/weather-large.html" width="800" height="600" style="border: none;"></iframe>
         </div>
 
+        <div class="image-container">
+          <img id="liveImage" src="https://aat-ops.anu.edu.au/skycam/telescope/telescope.png" alt="Skycam Image">
+        </div>
+        <script>
+            function updateImage() {
+                const img = document.getElementById('liveImage');
+                img.src = `https://aat-ops.anu.edu.au/skycam/telescope/telescope.png?timestamp=${new Date().getTime()}`;
+            }
+
+            // Update image every 5 seconds
+            setInterval(updateImage, 5000);
+        </script>
+
 
 
         <!-- NASA NEO Data -->
