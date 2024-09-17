@@ -15,7 +15,7 @@ sections:
     content:
       title: Forecasts & Weather
       text: |
-        <div style="width:400px; margin:0 auto; margin-bottom:68px;">
+        <div style="width:400px; margin:0 auto; margin-bottom:34px;">
           <div style="float:left;">
             <iframe src="https://free.timeanddate.com/clock/i9jtr4t7/n57/tlau/fs20/fcfff/tc111/bacfff/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="166" height="60"></iframe>
           </div>
@@ -154,6 +154,8 @@ sections:
               });
               
               const data = await response.json();
+              console.log('Full response:', data)
+              
               const watchContainer = document.getElementById('aurora-watch-info');
 
               if (data.data.length > 0) {
