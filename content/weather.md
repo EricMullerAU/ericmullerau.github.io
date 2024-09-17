@@ -58,10 +58,7 @@ sections:
           <div class="interaction-blocker" id="blocker" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1); z-index: 10;"></div>
         </div>
 
-        <!-- Toggle Button -->
-        <button id="toggleInteraction" style="margin-top: 0px; padding: 10px; cursor: pointer;">
-          Enable Interaction
-        </button>
+
 
         <label class="switch" style="position: relative; display: inline-block; width: 60px; height: 34px;">
           <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;">
@@ -376,17 +373,15 @@ sections:
           // Initial state: interaction is blocked
           let interactionEnabled = false;
 
-          document.getElementById('toggleInteraction').addEventListener('click', function() {
+          document.getElementById('toggleInteraction').addEventListener('change', function() {
               const blocker = document.getElementById('blocker');
               
               if (interactionEnabled) {
                   // Disable interaction (show the blocker)
                   blocker.style.display = 'block';
-                  this.innerText = 'Enable Interaction';
               } else {
                   // Enable interaction (hide the blocker)
                   blocker.style.display = 'none';
-                  this.innerText = 'Disable Interaction';
               }
               
               // Toggle state
