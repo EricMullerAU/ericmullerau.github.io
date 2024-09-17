@@ -58,8 +58,8 @@ sections:
           <div class="interaction-blocker" id="blocker" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1); z-index: 10;"></div>
         </div>
 
-        <label style="position: relative; display: inline-flex; align-items: center; width: 400px; height: 40px; margin:0 auto; margin-bottom: 20px;">
-          <span style="margin-right: 10px; width: 100px;">Enable Windy interaction</span>
+        <label style="position: relative; display: inline-flex; align-items: center; width: 20px; height: 35px; margin:0 auto; margin-bottom: 20px;">
+          <span style="margin-right: 200px;">Enable Windy interaction</span>
           <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
           <span style="
             position: absolute;
