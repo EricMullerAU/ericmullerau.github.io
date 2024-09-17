@@ -58,11 +58,7 @@ sections:
         </div>
 
         <!-- AAT SkyCam -->
-        <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-        <iframe src="https://aat-ops.anu.edu.au/skycam/weather-large.html" width="800" height="600" style="border: none;"></iframe>
-        </div>
-
-        <div class="image-container">
+        <div class="image-container" style="width:620px; margin:0 auto; margin-bottom:20px;">
           <img id="liveImage" src="https://aat-ops.anu.edu.au/skycam/telescope/telescope.png" alt="Skycam Image">
         </div>
 
