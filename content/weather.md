@@ -60,11 +60,61 @@ sections:
 
 
 
-        <label class="switch" style="position: relative; display: inline-block; width: 60px; height: 34px;">
-          <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;">
-          <span class="slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px;"></span>
-          <span class="slider:before" style="position: absolute; content: ''; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%;"></span>
+        <label class="switch">
+          <input type="checkbox" id="toggleInteraction">
+          <span class="slider"></span>
         </label>
+        <style>
+          /* The switch - the box around the slider */
+          .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+          }
+        
+          /* Hide default HTML checkbox */
+          .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+        
+          /* The slider */
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+          }
+        
+          .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+          }
+        
+          /* When checked, change the background color */
+          input:checked + .slider {
+            background-color: #2196F3;
+          }
+        
+          /* Move the slider (circle) when checked */
+          input:checked + .slider:before {
+            transform: translateX(26px);
+          }
+        </style>
         
 
         <p><strong>Space Weather</strong></p>
