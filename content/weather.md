@@ -45,9 +45,67 @@ sections:
           <div style="clear:both;"></div>
         </div>
 
-        <div style="width:620px; margin:0 auto;">
-        <iframe src="https://services.swpc.noaa.gov/images/animations/ovation/south/" width="800" height="800" frameborder="0" allowfullscreen></iframe>
+        <p class="product-grid-cell-title">Southern Hemisphere</p>
+        <div class="animation" id="auroraAnimation">
+          <canvas id="auroraCanvas" title="Click to view full screen" height="800" width="800" style="max-width: 800px;"></canvas>
+          <div class="animationToolbar" style="max-width: 800px;">
+            <button id="startButton" class="animationButton startButton" title="Play or Pause">Play</button>
+          </div>
         </div>
+
+        <script>
+          const canvas = document.getElementById('auroraCanvas');
+          const ctx = canvas.getContext('2d');
+          let images = [];
+          let currentFrame = 0;
+          let isPlaying = false;
+          let animationInterval;
+
+          // Fetch the animation data from NOAA
+          fetch('https://services.swpc.noaa.gov/products/animations/ovation_south_24h.json')
+            .then(response => response.json())
+            .then(data => {
+              images = data.map(frame => {
+                const img = new Image();
+                img.src = frame; // each frame is an image URL
+                return img;
+              });
+            });
+
+          // Draw each frame
+          function drawFrame() {
+            if (images.length > 0) {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
+              currentFrame = (currentFrame + 1) % images.length;
+            }
+          }
+
+          // Start the animation
+          function startAnimation() {
+            if (!isPlaying) {
+              isPlaying = true;
+              animationInterval = setInterval(drawFrame, 200); // Adjust speed as necessary
+              document.getElementById('startButton').innerText = 'Pause';
+            }
+          }
+
+          // Stop the animation
+          function stopAnimation() {
+            isPlaying = false;
+            clearInterval(animationInterval);
+            document.getElementById('startButton').innerText = 'Play';
+          }
+
+          // Toggle Play/Pause
+          document.getElementById('startButton').addEventListener('click', function() {
+            if (isPlaying) {
+              stopAnimation();
+            } else {
+              startAnimation();
+            }
+          });
+        </script>
 
         <!-- NASA NEO Data -->
         <div id="nasa-neo-info" style="font-size: small;">
