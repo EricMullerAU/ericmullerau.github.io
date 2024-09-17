@@ -66,9 +66,9 @@ sections:
           fetch('https://services.swpc.noaa.gov/products/animations/ovation_south_24h.json')
             .then(response => response.json())
             .then(data => {
-              images = data.map(relativePath => {
+              images = data.map(item => {
                 const img = new Image();
-                img.src = baseURL + relativePath; // Construct the full URL
+                img.src = baseURL + item.url; // Construct the full URL
                 return img;
               });
               // Ensure all images are loaded before starting the animation
