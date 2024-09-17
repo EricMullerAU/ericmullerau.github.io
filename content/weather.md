@@ -37,15 +37,27 @@ sections:
         <div style="width:620px; margin:0 auto; margin-bottom:20px;">
           <p><strong>Twilight Times for Today</strong></p>
     
-          <p>Astronomical Dawn: <span id="astrDawn"></span></p>
-          <p>Nautical Dawn: <span id="nautDawn"></span></p>
-          <p>Civil Dawn: <span id="civDawn"></span></p>
-          <p>Sunrise: <span id="sunrise"></span></p>
-          
-          <p>Sunset: <span id="sunset"></span></p>
-          <p>Civil Dusk: <span id="civDusk"></span></p>
-          <p>Nautical Dusk: <span id="nautDusk"></span></p>
-          <p>Astronomical Dusk: <span id="astrDusk"></span></p>
+          <p>Astronomical Dawn: <span id="aDaTod"></span></p>
+          <p>Nautical Dawn: <span id="nDaTod"></span></p>
+          <p>Civil Dawn: <span id="cDaTod"></span></p>
+          <p>Sunrise: <span id="sunrTod"></span></p>
+          <p>Sunset: <span id="sunsTod"></span></p>
+          <p>Civil Dusk: <span id="cDuTod"></span></p>
+          <p>Nautical Dusk: <span id="nDuTod"></span></p>
+          <p>Astronomical Dusk: <span id="aDuTod"></span></p>
+        </div>
+
+        <div style="width:620px; margin:0 auto; margin-bottom:20px;"></div>
+          <p><strong>Twilight Times for Tomorrow</strong></p>
+    
+          <p>Astr. Dawn: <span id="aDaTom"></span></p>
+          <p>Naut. Dawn: <span id="nDaTom"></span></p>
+          <p>Civil Dawn: <span id="cDaTom"></span></p>
+          <p>Sunrise: <span id="sunrTom"></span></p>
+          <p>Sunset: <span id="sunsTom"></span></p>
+          <p>Civil Dusk: <span id="cDuTom"></span></p>
+          <p>Naut. Dusk: <span id="nDuTom"></span></p>
+          <p>Astr. Dusk: <span id="aDuTom"></span></p>
         </div>
 
         <!-- WillyWeather forecast -->
@@ -597,23 +609,35 @@ sections:
 
           // Get the current date
           const today = new Date();
+          const tomorrow = new Date(today);  // Create a copy of today's date
+          tomorrow.setDate(today.getDate() + 1);  // Add 1 day to the date
 
           // Call the getTwilights function
           const twilightTimes = calculator.getTwilights(today);
+          const tomorrowTimes = calculator.getTwilights(tomorrow)
 
           // Extract each time from the result and format it
           const formatTime = (time) => `${time.hour.toString().padStart(2, '0')}:${time.minute.toString().padStart(2, '0')}:${time.second.toString().padStart(2, '0')}`;
-
-          // Get the twilight times and inject them into HTML
-          document.getElementById('astrDawn').innerText = formatTime(twilightTimes[0]);
-          document.getElementById('nautDawn').innerText = formatTime(twilightTimes[1]);
-          document.getElementById('civDawn').innerText = formatTime(twilightTimes[2]);
-          document.getElementById('sunrise').innerText = formatTime(twilightTimes[3]);
           
-          document.getElementById('sunset').innerText = formatTime(twilightTimes[4]);
-          document.getElementById('civDusk').innerText = formatTime(twilightTimes[5]);
-          document.getElementById('nautDusk').innerText = formatTime(twilightTimes[6]);
-          document.getElementById('astrDusk').innerText = formatTime(twilightTimes[7]);
+          // Get the twilight times and inject them into HTML
+          document.getElementById('aDaTod').innerText = formatTime(twilightTimes[0]);
+          document.getElementById('nDaTod').innerText = formatTime(twilightTimes[1]);
+          document.getElementById('cDaTod').innerText = formatTime(twilightTimes[2]);
+          document.getElementById('sunrTod').innerText = formatTime(twilightTimes[3]);
+          document.getElementById('sunsTod').innerText = formatTime(twilightTimes[4]);
+          document.getElementById('cDuTod').innerText = formatTime(twilightTimes[5]);
+          document.getElementById('nDuTod').innerText = formatTime(twilightTimes[6]);
+          document.getElementById('aDuTod').innerText = formatTime(twilightTimes[7]);
+
+          document.getElementById('aDaTom').innerText = formatTime(tomorrowTimes[0]);
+          document.getElementById('nDaTom').innerText = formatTime(tomorrowTimes[1]);
+          document.getElementById('cDaTom').innerText = formatTime(tomorrowTimes[2]);
+          document.getElementById('sunrTom').innerText = formatTime(tomorrowTimes[3]);
+          document.getElementById('sunsTom').innerText = formatTime(tomorrowTimes[4]);
+          document.getElementById('cDuTom').innerText = formatTime(tomorrowTimes[5]);
+          document.getElementById('nDuTom').innerText = formatTime(tomorrowTimes[6]);
+          document.getElementById('aDuTom').innerText = formatTime(tomorrowTimes[7]);
+
           });
         </script>
 
