@@ -425,7 +425,7 @@ sections:
                 // Enable interaction (hide the blocker)
                 blocker.style.display = 'none';
                 this.nextElementSibling.style.backgroundColor = '#BC0000'; // Change background color when enabled
-                knob.style.transform = 'translateX(10px)'; // Move knob to the right
+                knob.style.transform = 'translateX(16px)'; // Move knob to the right
                 this.nextElementSibling.style.transition = 'background-color 0.4s';
                 knob.style.transition = 'transform 0.4s';
                 this.nextElementSibling.style.borderRadius = '20px';
