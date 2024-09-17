@@ -43,7 +43,41 @@ sections:
           <div style="clear:both;"></div>
         </div>
 
+        <!-- NASA NEO Data -->
+        <div id="nasa-neo-info">
+          <p>Loading NASA Near-Earth Object data...</p>
+        </div>
+
         <!-- weather warnings -->
         <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75237" type="application/javascript"></script>
         <small>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></small>
+
+        <!-- NASA API script -->
+        <script>
+          async function fetchNASAData() {
+            const apiKey = '7fraiXp4qSUvpkgGhfImAxLjmZ6YqAm8pFwe0PiI'; // Replace with your actual API key
+            const startDate = '2024-09-16'; // Adjust this to the current or desired date
+            const endDate = '2024-09-23'; // Adjust as needed
+            const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=${apiKey}`;
+
+            try {
+              const response = await fetch(url);
+              const data = await response.json();
+
+              // Display NASA data
+              const element = document.getElementById('nasa-neo-info');
+              element.innerHTML = `<p>Near-Earth Objects from ${startDate} to ${endDate}:</p>`;
+
+              data.near_earth_objects[startDate].forEach(neo => {
+                element.innerHTML += `<p>Object: ${neo.name} - Diameter: ${neo.estimated_diameter.kilometers.estimated_diameter_max} km</p>`;
+              });
+              
+            } catch (error) {
+              console.error('Error fetching data:', error);
+            }
+          }
+
+          // Call the function when the page loads
+          window.onload = fetchNASAData;
+        </script>
 ---
