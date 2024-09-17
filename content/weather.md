@@ -87,7 +87,7 @@ sections:
           <div class="interaction-blocker" id="blocker" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1); z-index: 10;"></div>
         </div>
 
-        <label style="position: relative; display: inline-flex; align-items: center; width: 35px; height: 20px; margin:0 auto; margin-bottom: 20px;">
+        <label style="position: relative; display: inline-block; width: 34px; height: 20px; margin-bottom: 20px;">
           <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
           <span style="
             position: absolute;
@@ -173,11 +173,6 @@ sections:
         <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
           <img id="MSOHorizon" src="https://www.mso.anu.edu.au/~brad/brightsky/reynolds/latest.jpg" alt="MSO Western Horizon Image" style="width: 100%; height: auto;">
           <button class="refresh-button" onclick="refreshImage('MSOHorizon')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
-        </div>
-
-        <!-- NASA NEO Data -->
-        <div id="nasa-neo-info" style="font-size: small;">
-          <p>Loading NASA Near-Earth Object data...</p>
         </div>
 
         <!-- weather warnings -->
@@ -429,11 +424,11 @@ sections:
             if (this.checked) {
                 // Enable interaction (hide the blocker)
                 blocker.style.display = 'none';
-                this.nextElementSibling.style.backgroundColor = '#2196F3'; // Change background color when enabled
-                knob.style.transform = 'translateX(26px)'; // Move knob to the right
+                this.nextElementSibling.style.backgroundColor = '#BC0000'; // Change background color when enabled
+                knob.style.transform = 'translateX(10px)'; // Move knob to the right
                 this.nextElementSibling.style.transition = 'background-color 0.4s';
                 knob.style.transition = 'transform 0.4s';
-                this.nextElementSibling.style.borderRadius = '34px';
+                this.nextElementSibling.style.borderRadius = '20px';
             } else {
                 // Disable interaction (show the blocker)
                 blocker.style.display = 'block';
@@ -441,7 +436,7 @@ sections:
                 knob.style.transform = 'translateX(0)'; // Move knob to the left
                 this.nextElementSibling.style.transition = 'background-color 0.4s';
                 knob.style.transition = 'transform 0.4s';
-                this.nextElementSibling.style.borderRadius = '34px';
+                this.nextElementSibling.style.borderRadius = '20px';
             }
             
             // Toggle state
