@@ -15,6 +15,12 @@ sections:
     content:
       title: Forecasts & Weather
       text: |
+        <!-- Aurora update notification -->
+        <div id="notification" style="display: none; position: fixed; top: 10px; left: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
+          New aurora forecast frame!
+        </div>
+
+        <!-- Clocks -->
         <div style="width:400px; margin:0 auto; margin-bottom:34px;">
           <div style="float:left;">
             <iframe src="https://free.timeanddate.com/clock/i9jtr4t7/n57/tlau/fs20/fcfff/tc111/bacfff/pa6/tt0/tw1/tm3/td2/th1/ta1/tb4" frameborder="0" width="166" height="60"></iframe>
@@ -25,11 +31,10 @@ sections:
           <div style="clear:both;"></div>
         </div>
 
+        <!-- Windy Maps -->
         <div style="width:620px; margin:0 auto; margin-bottom:20px;">
         <div style="width: 620px;"><iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=75240" width="620" height="520" frameborder="0"  scrolling="no"></iframe><a style="margin: -20px 0 0 0;display: block;position: relative;height: 20px;text-indent: -9999em;z-index: 1" href="https://www.willyweather.com.au/act/canberra/oconnor.html" rel="nofollow">OConnor Weather</a></div>
         </div>
-
-        
 
         <div style="width:620px; margin:0 auto; margin-bottom:20px;">
         <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-36.058&lon=149.26&detailLat=-35.251&detailLon=149.124&marker=true&message=true" frameborder="0"></iframe>
@@ -50,14 +55,23 @@ sections:
         <!-- NOAA SH Aurora Forecast -->
         <div class="animation" id="auroraAnimation" style="width:620px; margin:0 auto; text-align: center; margin-bottom:20px;">
           <canvas id="auroraCanvas" title="Click to view full screen" height="620" width="620" style="max-width: 620px;"></canvas>
+          
           <div class="animationToolbar" style="max-width: 620px; display: flex; align-items: center; margin-top: 10px; justify-content: center;">
-            <button id="startButton" class="animationButton startButton" style="border: 1px solid white; background-color: black; color: white; width: 80px; height: 40px; margin-right: 10px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s;" title="Play or Pause">Play</button>
-            <div id="progressContainer" style="position: relative; width: 100%; max-width: 500px; flex-grow: 1; position: relative; margin-left: 10px; width: 100%;">
-              <input type="range" id="progressBar" value="0" max="100" style="width: 100%; -webkit-appearance: none; background: #ddd; height: 6px; border-radius: 3px;">
-              <div id="timeDisplay" style="position: absolute; top: 50%; right: 0; padding: 5px; background: rgba(0,0,0,0.5); color: white; transform: translateY(-50%);"></div>
+            <!-- Play/Pause Button -->
+            <button id="startButton" class="animationButton startButton" 
+                    style="border: 1px solid white; background-color: black; color: white; width: 80px; height: 40px; margin-right: 10px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s;" 
+                    title="Play or Pause">
+              Play
+            </button>
+
+            <!-- Progress Bar -->
+            <div id="progressContainer" style="position: relative; width: 100%; max-width: 500px; flex-grow: 1; margin-left: 10px;">
+              <input type="range" id="progressBar" value="0" max="100" 
+                    style="width: 100%; -webkit-appearance: none; background: #ddd; height: 6px; border-radius: 3px;">
             </div>
           </div>
         </div>
+
 
         <p><strong>AAT Cams</strong></p>
 
@@ -232,16 +246,19 @@ sections:
           let currentFrame = 0;
           let isPlaying = false;
           let animationInterval;
-          const baseURL = 'https://services.swpc.noaa.gov'; // Base URL for images 
+          const baseURL = 'https://services.swpc.noaa.gov'; // Base URL for images
 
-          // Fetch the animation data from NOAA
-          fetch('https://services.swpc.noaa.gov/products/animations/ovation_south_24h.json')
-            .then(response => response.json())
-            .then(data => {
+          // Function to fetch and process the animation data
+          async function fetchAnimationData() {
+            try {
+              const response = await fetch('https://services.swpc.noaa.gov/products/animations/ovation_south_24h.json');
+              const data = await response.json();
+              
+              // Map the images and time tags from the JSON
               images = data.map(item => {
                 const img = new Image();
                 img.src = baseURL + item.url; // Construct the full URL
-                imageTimes.push(item.time_tag); // Store time tags for display
+                imageTimes.push(new Date(item.time_tag)); // Store time tags for comparison
                 return img;
               });
 
@@ -259,7 +276,10 @@ sections:
                   console.error('Error loading image:', img.src);
                 };
               });
-            });
+            } catch (error) {
+              console.error('Error fetching animation data:', error);
+            }
+          }
 
           // Display the first image
           function displayFirstImage() {
@@ -273,15 +293,9 @@ sections:
             if (images.length > 0) {
               ctx.clearRect(0, 0, canvas.width, canvas.height);
               ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
-              updateTimeDisplay(currentFrame);
               document.getElementById('progressBar').value = (currentFrame / (images.length - 1)) * 100;
               currentFrame = (currentFrame + 1) % images.length;
             }
-          }
-
-          // Update the time display
-          function updateTimeDisplay(index) {
-            document.getElementById('timeDisplay').innerText = imageTimes[index];
           }
 
           // Start the animation
@@ -315,13 +329,41 @@ sections:
               currentFrame = Math.round((event.target.value / 100) * (images.length - 1));
               ctx.clearRect(0, 0, canvas.width, canvas.height);
               ctx.drawImage(images[currentFrame], 0, 0, canvas.width, canvas.height);
-              updateTimeDisplay(currentFrame);
             }
           });
 
-          // Initialize the first image display
-          displayFirstImage();
+          // Check if new aurora forecast frames are available by comparing timestamps
+          async function checkForNewFrames() {
+            const response = await fetch('https://services.swpc.noaa.gov/products/animations/ovation_south_24h.json');
+            const data = await response.json();
+            const latestFrameTime = new Date(data[data.length - 1].time_tag);
+
+            // If the latest frame is newer than the last loaded frame, reload the animation and show notification
+            if (latestFrameTime > imageTimes[imageTimes.length - 1]) {
+              console.log('New frames available. Reloading animation...');
+              await fetchAnimationData(); // Fetch new images and update the animation
+              showNotification(); // Show notification
+            } else {
+              console.log('No new frames available.');
+            }
+          }
+
+          // Check for new frames every 15 minutes
+          setInterval(checkForNewFrames, 15 * 60 * 1000); // 15 minutes interval
+
+          // Show notification for new frames
+          function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block'; // Show the notification
+            setTimeout(() => {
+              notification.style.display = 'none'; // Hide after 5 seconds
+            }, 5000); // Notification duration in milliseconds (5 seconds)
+          }
+
+          // Initial load of the animation
+          fetchAnimationData();
         </script>
+
 
         <!-- Image refresh script -->
         <script>
