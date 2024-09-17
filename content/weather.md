@@ -51,7 +51,7 @@ sections:
         </div>
 
         <!-- Aurora Alert Data -->
-        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%; font-size: small; line-height: 0.5em;">
+        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1em;">
           <p>Loading Aurora Alert data...</p>
         </div>
 
