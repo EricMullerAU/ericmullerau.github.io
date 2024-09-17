@@ -51,7 +51,7 @@ sections:
         </div>
 
         <!-- Aurora Alert Data -->
-        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%;">
+        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%; font-size: small;">
           <p>Loading Aurora Alert data...</p>
         </div>
 
@@ -62,7 +62,7 @@ sections:
 
         <!-- weather warnings -->
         <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75237" type="application/javascript"></script>
-        <small>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></small>
+        <x-small>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></x-small>
 
 
 
@@ -97,8 +97,6 @@ sections:
             }
           }
 
-          // Call the function when the page loads
-          window.onload = fetchNASAData;
         </script>
 
         <!-- POST request to get aurora alert -->
@@ -154,8 +152,6 @@ sections:
               });
               
               const data = await response.json();
-              console.log('Full response:', data)
-              
               const watchContainer = document.getElementById('aurora-watch-info');
 
               if (data.data.length > 0) {
@@ -182,6 +178,7 @@ sections:
         window.onload = function() {
           fetchAuroraAlert();
           fetchAuroraWatch();
+          fetchNASAData();
         }
         </script>
 ---
