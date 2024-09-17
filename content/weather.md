@@ -48,6 +48,11 @@ sections:
           <p>Loading NASA Near-Earth Object data...</p>
         </div>
 
+        <!-- Aurora Alert Data -->
+        <div id="aurora-alert-info">
+          <p>Loading Aurora Alert data...</p>
+        </div>
+
         <!-- weather warnings -->
         <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75237" type="application/javascript"></script>
         <small>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></small>
@@ -79,5 +84,46 @@ sections:
 
           // Call the function when the page loads
           window.onload = fetchNASAData;
+        </script>
+
+        <!-- POST request to get aurora alert -->
+        <script>
+          async function fetchAuroraAlert() {
+            const url = 'https://sws-data.sws.bom.gov.au/api/v1/get-aurora-alert';
+            const apiKey = '3f723484-5188-475d-bd35-d969324a4926'; // Use the provided API key
+            
+            try {
+              const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ api_key: apiKey })
+              });
+              
+              const data = await response.json();
+              const alertContainer = document.getElementById('aurora-alert-info');
+
+              if (data.data.length > 0) {
+                const alert = data.data[0];
+                alertContainer.innerHTML = `
+                  <p><strong>Aurora Alert:</strong></p>
+                  <p>Start Time: ${alert.start_time}</p>
+                  <p>Valid Until: ${alert.valid_until}</p>
+                  <p>K Index: ${alert.k_aus}</p>
+                  <p>Latitude Band: ${alert.lat_band}</p>
+                  <p>Description: ${alert.description}</p>
+                `;
+              } else {
+                alertContainer.innerHTML = `<p>No active aurora alerts at this time.</p>`;
+              }
+            } catch (error) {
+              console.error('Error fetching Aurora Alert data:', error);
+              document.getElementById('aurora-alert-info').innerHTML = `<p>Error loading aurora alert data.</p>`;
+            }
+          }
+
+          // Call the function when the page loads
+          window.onload = fetchAuroraAlert;
         </script>
 ---
