@@ -61,9 +61,9 @@ sections:
 
 
         <!-- Sliding Switch -->
-        <div style="display: flex; align-items: center; text-align: center;">
-          <span style="margin-right: 10px; font-size: small;">Enable Windy interaction:</span>
-          <label style="position: relative; display: inline-block; width: 60px; height: 34px;">
+        <div style="display: flex; align-items: center; text-align: center; margin:0 auto;">
+          <span style="margin-right: 10px; font-size: small; margin:0 auto;">Enable Windy interaction:</span>
+          <label style="position: relative; display: inline-block; width: 60px; height: 20px;">
             <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
             <span style="
               position: absolute;
@@ -74,16 +74,16 @@ sections:
               bottom: 0;
               background-color: #ccc;
               transition: .4s;
-              border-radius: 34px;
+              border-radius: 20px;
             "></span>
             <span style="
               position: absolute;
               background-color: white;
               border-radius: 50%;
-              height: 26px;
-              width: 26px;
-              left: 4px;
-              bottom: 4px;
+              height: 16px;
+              width: 16px;
+              left: 2px;
+              bottom: 2px;
               transition: .4s;
               transform: translateX(0);
             "></span>
