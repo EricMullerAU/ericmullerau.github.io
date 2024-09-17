@@ -61,32 +61,34 @@ sections:
 
 
         <!-- Sliding Switch -->
-        <label style="position: relative; display: inline-block; width: 60px; height: 34px;">
-          <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
-          <span style="
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-          "></span>
-          <span style="
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            transition: .4s;
-            transform: translateX(0);
-          "></span>
-        </label>
-
+        <div style="display: flex; align-items: center;">
+          <span style="margin-right: 10px;"?>Enable Windy interaction:</span>
+          <label style="position: relative; display: inline-block; width: 60px; height: 34px;">
+            <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
+            <span style="
+              position: absolute;
+              cursor: pointer;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: #ccc;
+              transition: .4s;
+              border-radius: 34px;
+            "></span>
+            <span style="
+              position: absolute;
+              background-color: white;
+              border-radius: 50%;
+              height: 26px;
+              width: 26px;
+              left: 4px;
+              bottom: 4px;
+              transition: .4s;
+              transform: translateX(0);
+            "></span>
+          </label>
+        </div>
         
 
         <p><strong>Space Weather</strong></p>
