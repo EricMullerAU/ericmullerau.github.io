@@ -39,7 +39,7 @@ sections:
         </div>
 
         <!-- Windy Maps -->
-        <div class="map-container" style="position: relative; width: 100%; max-width: 620px; margin-bottom: 20px;">
+        <div class="map-container" style="position: relative; width: 100%; max-width: 620px; margin-bottom: 20px; margin:0 auto;">
 
           <div style="width:620px; margin:0 auto; margin-bottom:20px;">
             <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-36.058&lon=149.26&detailLat=-35.251&detailLon=149.124&marker=true&message=true" frameborder="0"></iframe>
@@ -59,9 +59,18 @@ sections:
         </div>
 
         <!-- Toggle Button -->
-        <button id="toggleInteraction" style="margin-top: 10px; padding: 10px; cursor: pointer;">
+        <button id="toggleInteraction" style="margin-top: 0px; padding: 10px; cursor: pointer;">
           Enable Interaction
         </button>
+
+        <label class="switch" style="position: relative; display: inline-block; width: 60px; height: 34px;">
+          <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;">
+          <span class="slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px;"></span>
+          <span class="slider:before" style="position: absolute; content: ''; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%;"></span>
+        </label>
+        
+
+        <p><strong>Space Weather</strong></p>
 
         <!-- Aurora Alert Data -->
         <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
@@ -72,8 +81,6 @@ sections:
         <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
           <p>Loading Aurora Watch data...</p>
         </div>
-
-        <p><strong>NOAA Aurora Forecast</strong></p>
 
         <!-- NOAA SH Aurora Forecast -->
         <div class="animation" id="auroraAnimation" style="width:620px; margin:0 auto; text-align: center; margin-bottom:20px;">
