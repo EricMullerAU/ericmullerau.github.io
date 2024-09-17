@@ -45,6 +45,8 @@ sections:
           <div style="clear:both;"></div>
         </div>
 
+        <p><strong>NOAA Aurora Forecast</strong></p>
+
         <!-- NOAA SH Aurora Forecast -->
         <div class="animation" id="auroraAnimation" style="width:620px; margin:0 auto; text-align: center; margin-bottom:20px;">
           <canvas id="auroraCanvas" title="Click to view full screen" height="620" width="620" style="max-width: 620px;"></canvas>
@@ -57,24 +59,41 @@ sections:
           </div>
         </div>
 
+        <p><strong>AAT Cams</strong></p>
+
         <!-- AAT SkyCam -->
         <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
-          <img id="AATSkyCam" src="https://aat-ops.anu.edu.au/skycam/telescope/telescope.png" alt="Skycam Image" style="width: 100%; height: auto;">
+          <img id="AATSkyCam" src="https://aat-ops.anu.edu.au/skycam/telescope/telescope.png" alt="AAT Skycam Image" style="width: 100%; height: auto;">
           <button class="refresh-button" onclick="refreshImage('AATSkyCam')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
         </div>
 
         <!-- AAT Pano -->
         <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
-          <img id="AATPano" src="https://aat-ops.anu.edu.au/skycam/telescope/horizon.jpg" alt="Skycam Image" style="width: 100%; height: auto;">
+          <img id="AATPano" src="https://aat-ops.anu.edu.au/skycam/telescope/horizon.jpg" alt="AAT Pano Image" style="width: 100%; height: auto;">
           <button class="refresh-button" onclick="refreshImage('AATPano')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
         </div>
 
-        <script>
-          function refreshImage(imageId) {
-              const img = document.getElementById(imageId);
-              img.src = img.src.split('?')[0] + `?timestamp=${new Date().getTime()}`;
-          }
-        </script>
+        <p><strong>MSO Cams</strong></p>
+
+        <!-- MSO SkyCam -->
+        <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
+          <img id="MSOSkyCam" src="https://www.mso.anu.edu.au/msoallsky/msoskycam.jpg" alt="MSO Skycam Image" style="width: 100%; height: auto;">
+          <button class="refresh-button" onclick="refreshImage('MSOSkyCam')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
+        </div>
+
+        <!-- MSO Pano -->
+        <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
+          <img id="MSOPano" src="https://www.mso.anu.edu.au/msoallsky/panorama.jpg" alt="MSO Pano Image" style="width: 100%; height: auto;">
+          <button class="refresh-button" onclick="refreshImage('MSOPano')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
+        </div>
+
+        <!-- MSO Western Horizon Cam -->
+        <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
+          <img id="MSOHorizon" src="https://www.mso.anu.edu.au/~brad/brightsky/reynolds/latest.jpg" alt="MSO Western Horizon Image" style="width: 100%; height: auto;">
+          <button class="refresh-button" onclick="refreshImage('MSOHorizon')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
+        </div>
+
+        <p><strong>API calls</strong></p>
 
         <!-- NASA NEO Data -->
         <div id="nasa-neo-info" style="font-size: small;">
@@ -302,6 +321,14 @@ sections:
 
           // Initialize the first image display
           displayFirstImage();
+        </script>
+
+        <!-- Image refresh script -->
+        <script>
+          function refreshImage(imageId) {
+              const img = document.getElementById(imageId);
+              img.src = img.src.split('?')[0] + `?timestamp=${new Date().getTime()}`;
+          }
         </script>
 
         <script>
