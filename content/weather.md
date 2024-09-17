@@ -16,7 +16,7 @@ sections:
       title: Forecasts & Weather
       text: |
         <!-- Aurora update notification -->
-        <div id="notification" style="display: none; position: fixed; top: 10px; left: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
+        <div id="notification" style="display: none; position: fixed; top: 100px; left: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
           New aurora forecast frame!
         </div>
 
@@ -365,7 +365,7 @@ sections:
             notification.style.display = 'block'; // Show the notification
             setTimeout(() => {
               notification.style.display = 'none'; // Hide after 5 seconds
-            }, 5000); // Notification duration in milliseconds (5 seconds)
+            }, 10000); // Notification duration in milliseconds (5 seconds)
           }
 
           // Initial load of the animation
