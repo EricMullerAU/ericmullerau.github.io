@@ -137,8 +137,6 @@ sections:
             }
           }
 
-          // Call the function when the page loads
-          window.onload = fetchAuroraAlert;
         </script>
 
         <script>
@@ -176,7 +174,12 @@ sections:
             }
           }
 
-          // Call the function when the page loads
-          window.onload = fetchAuroraWatch;
+        </script>
+
+        <script>
+        window.onload = function() {
+          fetchAuroraAlert();
+          fetchAuroraWatch();
+        }
         </script>
 ---
