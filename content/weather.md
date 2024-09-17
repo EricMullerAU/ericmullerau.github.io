@@ -60,7 +60,7 @@ sections:
           let currentFrame = 0;
           let isPlaying = false;
           let animationInterval;
-          const baseURL = 'https://services.swpc.noaa.gov/images/animations/ovation/south/'; // Base URL for images
+          const baseURL = 'https://services.swpc.noaa.gov'; // Base URL for images 
 
           // Fetch the animation data from NOAA
           fetch('https://services.swpc.noaa.gov/products/animations/ovation_south_24h.json')
