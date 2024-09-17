@@ -16,7 +16,7 @@ sections:
       title: Forecasts & Weather
       text: |
         <!-- Aurora update notification -->
-        <div id="notification" style="display: none; position: fixed; top: 100px; left: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
+        <div id="notification" style="display: none; position: fixed; top: 80px; left: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
           New aurora forecast frame!
         </div>
 
@@ -41,16 +41,45 @@ sections:
         <!-- Windy Maps -->
         <div class="map-container" style="position: relative; width: 100%; max-width: 620px; margin-bottom: 20px; margin:0 auto; text-align: center;">
 
+          <!-- Full-width Canberra Rain and Thunder-->
           <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-            <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-36.058&lon=149.26&detailLat=-35.251&detailLon=149.124&marker=true&message=true" frameborder="0"></iframe>
+            <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
           </div>
-
+          
+          <!-- Half-width Canberra weather radar and rain accumulation-->
           <div style="width:620px; margin:0 auto; margin-bottom:20px;">
             <div style="float:left;">
-              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=100m&lat=-35.514&lon=149.03" frameborder="0"></iframe>
+              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=radar&product=radar&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
             </div>
             <div style="float:right;">
-              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=950h&lat=-35.514&lon=149.03" frameborder="0"></iframe>
+              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rainAccu&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
+            </div>
+            <div style="clear:both;"></div>
+          </div>
+
+          <!-- Half-width Canberra Wind and Wind gusts-->
+          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+            <div style="float:left;">
+              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=wind&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
+            </div>
+            <div style="float:right;">
+              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=gust&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
+            </div>
+            <div style="clear:both;"></div>
+          </div>
+
+          <!-- Full-width Aus satellite-->
+          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+            <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=4&overlay=satellite&product=satellite&level=surface&lat=-27.917&lon=133.857&message=true" frameborder="0"></iframe>
+          </div>
+
+          <!-- Half-width Aus temperature and rain and thunder -->
+          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+            <div style="float:left;">
+              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=3&overlay=temp&product=ecmwf&level=surface&lat=-28.768&lon=133.945&message=true" frameborder="0"></iframe>
+            </div>
+            <div style="float:right;">
+              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=3&overlay=rain&product=ecmwf&level=surface&lat=-28.768&lon=133.945&message=true" frameborder="0"></iframe>
             </div>
             <div style="clear:both;"></div>
           </div>
@@ -94,7 +123,7 @@ sections:
         </div>
 
         <!-- Aurora Watch Data -->
-        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
+        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em; margin-bottom:20px;">
           <p>Loading Aurora Watch data...</p>
         </div>
 
