@@ -45,18 +45,22 @@ sections:
           <div style="clear:both;"></div>
         </div>
 
+        <div style="width:620px; margin:0 auto;">
+        <iframe src="https://services.swpc.noaa.gov/images/animations/ovation/south/" width="800" height="800" frameborder="0" allowfullscreen></iframe>
+        </div>
+
         <!-- NASA NEO Data -->
         <div id="nasa-neo-info" style="font-size: small;">
           <p>Loading NASA Near-Earth Object data...</p>
         </div>
 
         <!-- Aurora Alert Data -->
-        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1em;">
+        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
           <p>Loading Aurora Alert data...</p>
         </div>
 
         <!-- Aurora Watch Data -->
-        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 15px; margin: 0px auto; width: 100%; font-size: small; line-height: 0.5em;">
+        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
           <p>Loading Aurora Watch data...</p>
         </div>
 
