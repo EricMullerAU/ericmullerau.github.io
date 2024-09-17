@@ -32,22 +32,42 @@ sections:
         </div>
 
         <!-- Windy Maps -->
-        <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-        <div style="width: 620px;"><iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=75240" width="620" height="520" frameborder="0"  scrolling="no"></iframe><a style="margin: -20px 0 0 0;display: block;position: relative;height: 20px;text-indent: -9999em;z-index: 1" href="https://www.willyweather.com.au/act/canberra/oconnor.html" rel="nofollow">OConnor Weather</a></div>
-        </div>
-
-        <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-        <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-36.058&lon=149.26&detailLat=-35.251&detailLon=149.124&marker=true&message=true" frameborder="0"></iframe>
-        </div>
-
-        <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-          <div style="float:left;">
-            <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=100m&lat=-35.514&lon=149.03" frameborder="0"></iframe>
+        <div class="map-container" style="position: relative; width: 100%; max-width: 620px; margin-bottom: 20px;">
+          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+            <div style="width: 620px;">
+              <iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=75240" width="620" height="520" frameborder="0"  scrolling="no"></iframe><a style="margin: -20px 0 0 0;display: block;position: relative;height: 20px;text-indent: -9999em;z-index: 1" href="https://www.willyweather.com.au/act/canberra/oconnor.html" rel="nofollow">OConnor Weather</a>
+            </div>
           </div>
-          <div style="float:right;">
-            <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=950h&lat=-35.514&lon=149.03" frameborder="0"></iframe>
+
+          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+            <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-36.058&lon=149.26&detailLat=-35.251&detailLon=149.124&marker=true&message=true" frameborder="0"></iframe>
           </div>
+
+          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+            <div style="float:left;">
+              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=100m&lat=-35.514&lon=149.03" frameborder="0"></iframe>
+            </div>
+            <div style="float:right;">
+              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=950h&lat=-35.514&lon=149.03" frameborder="0"></iframe>
+            </div>
           <div style="clear:both;"></div>
+
+          <div class="interaction-blocker" id="blocker" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1); z-index: 10;"></div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button id="toggleInteraction" style="margin-top: 10px; padding: 10px; cursor: pointer;">
+          Enable Interaction
+        </button>
+
+        <!-- Aurora Alert Data -->
+        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
+          <p>Loading Aurora Alert data...</p>
+        </div>
+
+        <!-- Aurora Watch Data -->
+        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
+          <p>Loading Aurora Watch data...</p>
         </div>
 
         <p><strong>NOAA Aurora Forecast</strong></p>
@@ -100,21 +120,9 @@ sections:
           <button class="refresh-button" onclick="refreshImage('MSOHorizon')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
         </div>
 
-        <p><strong>API calls</strong></p>
-
         <!-- NASA NEO Data -->
         <div id="nasa-neo-info" style="font-size: small;">
           <p>Loading NASA Near-Earth Object data...</p>
-        </div>
-
-        <!-- Aurora Alert Data -->
-        <div id="aurora-alert-info" style="background-color: red; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
-          <p>Loading Aurora Alert data...</p>
-        </div>
-
-        <!-- Aurora Watch Data -->
-        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
-          <p>Loading Aurora Watch data...</p>
         </div>
 
         <!-- weather warnings -->
@@ -122,9 +130,6 @@ sections:
         <div style="margin:0 auto; font-size: x-small;">
           <p>Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a></p>
         </div>
-
-
-
 
 
 
@@ -357,6 +362,27 @@ sections:
           fetchAnimationData();
         </script>
 
+        <script>
+          // Initial state: interaction is blocked
+          let interactionEnabled = false;
+
+          document.getElementById('toggleInteraction').addEventListener('click', function() {
+              const blocker = document.getElementById('blocker');
+              
+              if (interactionEnabled) {
+                  // Disable interaction (show the blocker)
+                  blocker.style.display = 'block';
+                  this.innerText = 'Enable Interaction';
+              } else {
+                  // Enable interaction (hide the blocker)
+                  blocker.style.display = 'none';
+                  this.innerText = 'Disable Interaction';
+              }
+              
+              // Toggle state
+              interactionEnabled = !interactionEnabled;
+          });
+        </script>
 
         <!-- Image refresh script -->
         <script>
