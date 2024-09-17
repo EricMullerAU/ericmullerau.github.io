@@ -60,7 +60,7 @@ sections:
         <!-- AAT SkyCam -->
         <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
           <img id="liveImage" src="https://aat-ops.anu.edu.au/skycam/telescope/telescope.png" alt="Skycam Image" style="width: 100%; height: auto;">
-          <button class="refresh-button" onclick="refreshImage()" style="position: absolute;top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 10px; border-radius: 5px; cursor: pointer; z-index: 10;>Refresh</button>
+          <button class="refresh-button" onclick="refreshImage()" style="position: absolute;top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 10px; border-radius: 5px; cursor: pointer; z-index: 10;">Refresh</button>
         </div>
 
         <script>
