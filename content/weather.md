@@ -47,8 +47,8 @@ sections:
 
         <p class="product-grid-cell-title">Southern Hemisphere</p>
         <div class="animation" id="auroraAnimation">
-          <canvas id="auroraCanvas" title="Click to view full screen" height="800" width="800" style="max-width: 800px;"></canvas>
-          <div class="animationToolbar" style="max-width: 800px;">
+          <canvas id="auroraCanvas" title="Click to view full screen" height="620" width="620" style="max-width: 620px;"></canvas>
+          <div class="animationToolbar" style="max-width: 620px;">
             <button id="startButton" class="animationButton startButton" title="Play or Pause">Play</button>
           </div>
         </div>
@@ -96,7 +96,7 @@ sections:
           function startAnimation() {
             if (!isPlaying) {
               isPlaying = true;
-              animationInterval = setInterval(drawFrame, 200); // Adjust speed as necessary
+              animationInterval = setInterval(drawFrame, 100); // Adjust speed as necessary
               document.getElementById('startButton').innerText = 'Pause';
             }
           }
