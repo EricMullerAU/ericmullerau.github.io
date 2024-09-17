@@ -538,8 +538,46 @@ sections:
                 // For simplicity, this part will need to be handled carefully or with a library.
             }
 
+            function bisection(func, a, b, tol = 1e-6, maxIter = 100, ...args) {
+              // Check if the initial interval is valid
+              if (func(a, ...args) * func(b, ...args) > 0) {
+                throw new Error("Invalid initial interval");
+              }
+
+              for (let i = 0; i < maxIter; i++) {
+                // Compute the midpoint
+                const c = (a + b) / 2;
+                
+                // Check if the function at the midpoint is close enough to 0 (root found)
+                if (Math.abs(func(c, ...args)) < tol) {
+                  return c;
+                }
+                
+                // Update the interval
+                if (func(a, ...args) * func(c, ...args) < 0) {
+                  b = c;  // Root is between a and c
+                } else {
+                  a = c;  // Root is between c and b
+                }
+              }
+
+              throw new Error("Exceeded maximum iterations");
+            }
+
+
             getTwilights(date) {
                 // Dummy implementation for the twilight times using brentq placeholder
+                const astrDawn = this.bisection(this.solarElevation.bind(this), 0.0, 720.0, 1e-6, 100, date, 18);
+                const nautDawn = this.bisection(this.solarElevation.bind(this), 0.0, 720.0, 1e-6, 100, date, 12);
+                const civDawn = this.bisection(this.solarElevation.bind(this), 0.0, 720.0, 1e-6, 100, date, 6);
+                const sunrise = this.bisection(this.solarElevation.bind(this), 0.0, 720.0, 1e-6, 100, date, 0);
+
+                const sunset = this.bisection(this.solarElevation.bind(this), 720.0, 1440.0, 1e-6, 100, date, 0);
+                const civDusk = this.bisection(this.solarElevation.bind(this), 720.0, 1440.0, 1e-6, 100, date, 6);
+                const nautDusk = this.bisection(this.solarElevation.bind(this), 720.0, 1440.0, 1e-6, 100, date, 12);
+                const astrDusk = this.bisection(this.solarElevation.bind(this), 720.0, 1440.0, 1e-6, 100, date, 18);
+
+                /*
                 const astrDawn = this.brentq(this.solarElevation.bind(this), 0.0, 720.0, [date, 18]);
                 const nautDawn = this.brentq(this.solarElevation.bind(this), 0.0, 720.0, [date, 12]);
                 const civDawn = this.brentq(this.solarElevation.bind(this), 0.0, 720.0, [date, 6]);
@@ -549,6 +587,7 @@ sections:
                 const civDusk = this.brentq(this.solarElevation.bind(this), 720.0, 1440.0, [date, 6]);
                 const nautDusk = this.brentq(this.solarElevation.bind(this), 720.0, 1440.0, [date, 12]);
                 const astrDusk = this.brentq(this.solarElevation.bind(this), 720.0, 1440.0, [date, 18]);
+                */
 
                 return [this.minToTime(astrDawn), this.minToTime(nautDawn), this.minToTime(civDawn), this.minToTime(sunrise), this.minToTime(sunset), this.minToTime(civDusk), this.minToTime(nautDusk), this.minToTime(astrDusk)];
             }
