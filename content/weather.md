@@ -49,7 +49,7 @@ sections:
         </div>
 
         <!-- Aurora Alert Data -->
-        <div id="aurora-alert-info">
+        <div id="aurora-alert-info" style="background-color: black; color: white; border: 2px solid white; padding: 15px; margin: 20px auto; width: 80%; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);">
           <p>Loading Aurora Alert data...</p>
         </div>
 
@@ -108,10 +108,8 @@ sections:
                 const alert = data.data[0];
                 alertContainer.innerHTML = `
                   <p><strong>Aurora Alert:</strong></p>
-                  <p>Start Time: ${alert.start_time}</p>
-                  <p>Valid Until: ${alert.valid_until}</p>
-                  <p>K Index: ${alert.k_aus}</p>
-                  <p>Latitude Band: ${alert.lat_band}</p>
+                  <p>Issued at ${alert.start_time}</p>
+                  <p>${alert.k_aus} K index, ${alert.lat_band} latitude band.</p>
                   <p>Description: ${alert.description}</p>
                 `;
               } else {
