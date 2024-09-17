@@ -63,7 +63,7 @@ sections:
         <!-- Sliding Switch -->
         <div style="display: flex; align-items: center; text-align: center; margin:0 auto;">
           <span style="margin-right: 10px; font-size: small; margin:0 auto;">Enable Windy interaction:</span>
-          <label style="position: relative; display: inline-block; width: 60px; height: 20px;">
+          <label style="position: relative; display: inline-block; width: 35px; height: 20px; margin:0 auto;">
             <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
             <span style="
               position: absolute;
