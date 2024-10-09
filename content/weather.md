@@ -618,26 +618,43 @@ sections:
           const tomorrowTimes = calculator.getTwilights(tomorrow)
 
           // Extract each time from the result and format it
-          const formatTime = (time) => `${time.hour.toString().padStart(2, '0')}:${time.minute.toString().padStart(2, '0')}:${time.second.toString().padStart(2, '0')}`;
-          
-          // Get the twilight times and inject them into HTML
-          document.getElementById('aDaTod').innerText = formatTime(twilightTimes[0]);
-          document.getElementById('nDaTod').innerText = formatTime(twilightTimes[1]);
-          document.getElementById('cDaTod').innerText = formatTime(twilightTimes[2]);
-          document.getElementById('sunrTod').innerText = formatTime(twilightTimes[3]);
-          document.getElementById('sunsTod').innerText = formatTime(twilightTimes[4]);
-          document.getElementById('cDuTod').innerText = formatTime(twilightTimes[5]);
-          document.getElementById('nDuTod').innerText = formatTime(twilightTimes[6]);
-          document.getElementById('aDuTod').innerText = formatTime(twilightTimes[7]);
+          // const formatTime = (time) => `${time.hour.toString().padStart(2, '0')}:${time.minute.toString().padStart(2, '0')}:${time.second.toString().padStart(2, '0')}`;
 
-          document.getElementById('aDaTom').innerText = formatTime(tomorrowTimes[0]);
-          document.getElementById('nDaTom').innerText = formatTime(tomorrowTimes[1]);
-          document.getElementById('cDaTom').innerText = formatTime(tomorrowTimes[2]);
-          document.getElementById('sunrTom').innerText = formatTime(tomorrowTimes[3]);
-          document.getElementById('sunsTom').innerText = formatTime(tomorrowTimes[4]);
-          document.getElementById('cDuTom').innerText = formatTime(tomorrowTimes[5]);
-          document.getElementById('nDuTom').innerText = formatTime(tomorrowTimes[6]);
-          document.getElementById('aDuTom').innerText = formatTime(tomorrowTimes[7]);
+          const isDaylightSaving = (date) => {
+            const jan = new Date(date.getFullYear(), 0, 1).getTimezoneOffset();
+            const jul = new Date(date.getFullYear(), 6, 1).getTimezoneOffset();
+            return date.getTimezoneOffset() < Math.max(jan, jul);
+          };
+
+          const formatTime = (time, date) => {
+            let hours = time.hour;
+
+            // Check if daylight saving time is active on the given date
+            if (isDaylightSaving(date)) {
+              hours += 1; // Adjust for daylight savings
+            }
+
+            return `${hours.toString().padStart(2, '0')}:${time.minute.toString().padStart(2, '0')}:${time.second.toString().padStart(2, '0')}`;
+          };
+
+          // Get the twilight times and inject them into HTML
+          document.getElementById('aDaTod').innerText = formatTime(twilightTimes[0], today);
+          document.getElementById('nDaTod').innerText = formatTime(twilightTimes[1], today);
+          document.getElementById('cDaTod').innerText = formatTime(twilightTimes[2], today);
+          document.getElementById('sunrTod').innerText = formatTime(twilightTimes[3], today);
+          document.getElementById('sunsTod').innerText = formatTime(twilightTimes[4], today);
+          document.getElementById('cDuTod').innerText = formatTime(twilightTimes[5], today);
+          document.getElementById('nDuTod').innerText = formatTime(twilightTimes[6], today);
+          document.getElementById('aDuTod').innerText = formatTime(twilightTimes[7], today);
+
+          document.getElementById('aDaTom').innerText = formatTime(tomorrowTimes[0], tomorrow);
+          document.getElementById('nDaTom').innerText = formatTime(tomorrowTimes[1], tomorrow);
+          document.getElementById('cDaTom').innerText = formatTime(tomorrowTimes[2], tomorrow);
+          document.getElementById('sunrTom').innerText = formatTime(tomorrowTimes[3], tomorrow);
+          document.getElementById('sunsTom').innerText = formatTime(tomorrowTimes[4], tomorrow);
+          document.getElementById('cDuTom').innerText = formatTime(tomorrowTimes[5], tomorrow);
+          document.getElementById('nDuTom').innerText = formatTime(tomorrowTimes[6], tomorrow);
+          document.getElementById('aDuTom').innerText = formatTime(tomorrowTimes[7], tomorrow);
 
           });
         </script>
