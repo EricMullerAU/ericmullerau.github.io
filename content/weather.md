@@ -16,7 +16,9 @@ sections:
       title: Forecasts & Weather
       text: |
         {{< details title="Learn More" >}}
+        <p style="font-size: medium;">
         Collapsed text
+        </p>
         {{< /details >}}
         <p style="font-size: medium;">Due to the volatile nature of weather in Canberra, as well as the prime view Mount Stromlo Observatory has for certain astronomical events, I've collated some forecast tools here to avoid the need to check multiple apps/websites/widgets. These are implemented using free APIs, widgets, or in the case of some NOAA data, hard coded from their available image files. The dusk/dawn times are also hard coded as no simple API seems to exist. These calculations were taken from NOAA's Global Monitoring Labratory <a href="https://gml.noaa.gov/grad/solcalc/calcdetails.html">solar calculation details</a>. I will likely put the Python and/or Javascript code on github soon for anyone interest. Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a>.</p>
 
