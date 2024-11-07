@@ -15,14 +15,13 @@ sections:
     content:
       title: Forecasts & Weather
       text: |
-        {{< details title="Learn More" >}}
-        <p style="font-size: medium;">
-        Collapsed text
-        </p>
-        {{< /details >}}
         <p style="font-size: medium;">Due to the volatile nature of weather in Canberra, as well as the prime view Mount Stromlo Observatory has for certain astronomical events, I've collated some forecast tools here to avoid the need to check multiple apps/websites/widgets. These are implemented using free APIs, widgets, or in the case of some NOAA data, hard coded from their available image files. The dusk/dawn times are also hard coded as no simple API seems to exist. These calculations were taken from NOAA's Global Monitoring Labratory <a href="https://gml.noaa.gov/grad/solcalc/calcdetails.html">solar calculation details</a>. I will likely put the Python and/or Javascript code on github soon for anyone interest. Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a>.</p>
 
+        {{< details title="Todo" >}}
         <p style="font-size: medium;"> Some things on this page still need to be done: trying brentq instead of bisection method for root finding (see <a href="https://www.bomberbot.com/mathematics/mastering-root-finding-algorithms-in-javascript-a-comprehensive-guide/">this</a> and <a href="https://gist.github.com/ryanspradlin/18c1010b7dd2d875284933d018c5c908">this</a>, check that the twilight calculator is working (gives different results to <a href="https://www.timeanddate.com/astronomy/australia/canberra">this</a>, and I also need to check if the days are correct -- ie does midnight in CBR cause the next day to tick over for javascript? Maybe just print out the day in the section title), implement some extra info from the AAT pages <a href="https://aat-ops.anu.edu.au/AATdatabase/met.html">here</a> and <a href="https://aat-ops.anu.edu.au/met/">here</a>, add solar images from the following links: https://www.swpc.noaa.gov/products/goes-solar-ultraviolet-imager-suvi#, https://services.swpc.noaa.gov/products/animations/suvi-primary-284.json, https://services.swpc.noaa.gov/images/animations/suvi/primary/304/, https://www.sws.bom.gov.au/, https://www.sws.bom.gov.au/Images/SOLROT/noscript/SOL_IMG_9.jpg?11, and maybe put in solar wind from https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction. Flightradar widget from AirNav? Also, want to add a manual solar time calculator for given location. Also add video or at least link to last night's Stromlo video. I'd also like a moonrise calculator or a moon visibility curve.</p>
+        {{< /details >}}
+
+        <p style="font-size: medium;"> </p>
         <!-- Aurora update notification -->
         <div id="notification" style="display: none; position: fixed; top: 80px; left: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
           New aurora forecast frame!
@@ -175,22 +174,24 @@ sections:
           </div>
         </div>
 
+        {{< details title=<strong>AAT Cams</strong> >}}
+          <p><strong>AAT Cams</strong></p>
 
-        <p><strong>AAT Cams</strong></p>
+          <!-- AAT SkyCam -->
+          <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
+            <img id="AATSkyCam" src="https://aat-ops.anu.edu.au/skycam/telescope/telescope.png" alt="AAT Skycam Image" style="width: 100%; height: auto;">
+            <button class="refresh-button" onclick="refreshImage('AATSkyCam')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
+          </div>
 
-        <!-- AAT SkyCam -->
-        <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
-          <img id="AATSkyCam" src="https://aat-ops.anu.edu.au/skycam/telescope/telescope.png" alt="AAT Skycam Image" style="width: 100%; height: auto;">
-          <button class="refresh-button" onclick="refreshImage('AATSkyCam')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
-        </div>
-
-        <!-- AAT Pano -->
-        <!-- Doesn't work anymore. Fingers crossed for a replacement sky cam soon.
-        <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
-          <img id="AATPano" src="https://aat-ops.anu.edu.au/skycam/telescope/horizon.jpg" alt="AAT Pano Image" style="width: 100%; height: auto;">
-          <button class="refresh-button" onclick="refreshImage('AATPano')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
-        </div>
-        -->
+          <!-- AAT Pano -->
+          <!-- Doesn't work anymore. Fingers crossed for a replacement sky cam soon.
+          <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
+            <img id="AATPano" src="https://aat-ops.anu.edu.au/skycam/telescope/horizon.jpg" alt="AAT Pano Image" style="width: 100%; height: auto;">
+            <button class="refresh-button" onclick="refreshImage('AATPano')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
+          </div>
+          -->
+        {{< /details >}}
+        
 
         <p><strong>MSO Cams</strong></p>
 
