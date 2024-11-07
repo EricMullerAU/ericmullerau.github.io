@@ -1,0 +1,13 @@
+/* Customize the title of the collapsible section */
+details summary {
+    font-size: 1.2em;          /* Adjusts font size */
+    color: #3498db;            /* Sets title color */
+    cursor: pointer;           /* Adds a pointer cursor */
+    margin-left: 10px;         /* Adjusts position, left margin */
+    font-weight: bold;         /* Makes the title bold */
+}
+
+/* Optionally, add hover effect for better interactivity */
+details summary:hover {
+    color: #2980b9;            /* Darker color on hover */
+}

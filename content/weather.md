@@ -174,7 +174,7 @@ sections:
           </div>
         </div>
 
-        {{< details title=<strong>AAT Cams</strong> >}}
+        {{< details title="AAT Information" >}}
           <p><strong>AAT Cams</strong></p>
 
           <!-- AAT SkyCam -->
