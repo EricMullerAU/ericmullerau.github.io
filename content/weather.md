@@ -216,26 +216,44 @@ sections:
 
 
 
+        {{< details title="MSO Information" >}}
+          <p><strong>MSO Cams</strong></p>
 
-        <p><strong>MSO Cams</strong></p>
+          <!-- MSO SkyCam -->
+          <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
+            <img id="MSOSkyCam" src="https://www.mso.anu.edu.au/msoallsky/msoskycam.jpg" alt="MSO Skycam Image" style="width: 100%; height: auto;">
+            <button class="refresh-button" onclick="refreshImage('MSOSkyCam')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
+          </div>
 
-        <!-- MSO SkyCam -->
-        <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
-          <img id="MSOSkyCam" src="https://www.mso.anu.edu.au/msoallsky/msoskycam.jpg" alt="MSO Skycam Image" style="width: 100%; height: auto;">
-          <button class="refresh-button" onclick="refreshImage('MSOSkyCam')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
-        </div>
+          <!-- MSO Pano -->
+          <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
+            <img id="MSOPano" src="https://www.mso.anu.edu.au/msoallsky/panorama.jpg" alt="MSO Pano Image" style="width: 100%; height: auto;">
+            <button class="refresh-button" onclick="refreshImage('MSOPano')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
+          </div>
 
-        <!-- MSO Pano -->
-        <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
-          <img id="MSOPano" src="https://www.mso.anu.edu.au/msoallsky/panorama.jpg" alt="MSO Pano Image" style="width: 100%; height: auto;">
-          <button class="refresh-button" onclick="refreshImage('MSOPano')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
-        </div>
+          <!-- MSO Western Horizon Cam -->
+          <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
+            <img id="MSOHorizon" src="https://www.mso.anu.edu.au/~brad/brightsky/reynolds/latest.jpg" alt="MSO Western Horizon Image" style="width: 100%; height: auto;">
+            <button class="refresh-button" onclick="refreshImage('MSOHorizon')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
+          </div>
 
-        <!-- MSO Western Horizon Cam -->
-        <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
-          <img id="MSOHorizon" src="https://www.mso.anu.edu.au/~brad/brightsky/reynolds/latest.jpg" alt="MSO Western Horizon Image" style="width: 100%; height: auto;">
-          <button class="refresh-button" onclick="refreshImage('MSOHorizon')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
-        </div>
+        {{< /details >}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- SCRIPTS BELOW HERE -->
 
         <!-- weather warnings -->
         <script src="https://cdnres.willyweather.com.au/widget/warning/loadView.html?id=75237" type="application/javascript"></script>
