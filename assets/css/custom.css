@@ -11,3 +11,19 @@ details summary {
 details summary:hover {
     color: #a51c30;            /* Darker color on hover */
 }
+
+details summary,
+details summary a {
+    font-size: 1.2em;         /* Adjusts font size */
+    color: #ffffff !important; /* Sets title color with !important */
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+    text-decoration: none;    /* Removes underline, if present */
+}
+
+/* Optional hover effect */
+details summary:hover,
+details summary:hover a {
+    color: #a51c30 !important; /* Darker color on hover */
+}
