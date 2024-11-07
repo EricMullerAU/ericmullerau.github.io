@@ -13,12 +13,14 @@ sections:
       columns: '1'
       css_style: 'text-align: center;'
     content:
-      title: Forecasts & Weather
+      title: Weather, Forecasts, and Observing Info
       text: |
-        <p style="font-size: medium;">Due to the volatile nature of weather in Canberra, as well as the prime view Mount Stromlo Observatory has for certain astronomical events, I've collated some forecast tools here to avoid the need to check multiple apps/websites/widgets. These are implemented using free APIs, widgets, or in the case of some NOAA data, hard coded from their available image files. The dusk/dawn times are also hard coded as no simple API seems to exist. These calculations were taken from NOAA's Global Monitoring Labratory <a href="https://gml.noaa.gov/grad/solcalc/calcdetails.html">solar calculation details</a>. I will likely put the Python and/or Javascript code on github soon for anyone interested. Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a>.</p>
-
         {{< details title="Todo" >}}
-        <p style="font-size: medium;"> Some things on this page still need to be done: trying brentq instead of bisection method for root finding (see <a href="https://www.bomberbot.com/mathematics/mastering-root-finding-algorithms-in-javascript-a-comprehensive-guide/">this</a> and <a href="https://gist.github.com/ryanspradlin/18c1010b7dd2d875284933d018c5c908">this</a>, check that the twilight calculator is working (gives different results to <a href="https://www.timeanddate.com/astronomy/australia/canberra">this</a>, and I also need to check if the days are correct -- ie does midnight in CBR cause the next day to tick over for javascript? Maybe just print out the day in the section title), implement some extra info from the AAT pages <a href="https://aat-ops.anu.edu.au/AATdatabase/met.html">here</a> and <a href="https://aat-ops.anu.edu.au/met/">here</a>, add solar images from the following links: https://www.swpc.noaa.gov/products/goes-solar-ultraviolet-imager-suvi#, https://services.swpc.noaa.gov/products/animations/suvi-primary-284.json, https://services.swpc.noaa.gov/images/animations/suvi/primary/304/, https://www.sws.bom.gov.au/, https://www.sws.bom.gov.au/Images/SOLROT/noscript/SOL_IMG_9.jpg?11, and maybe put in solar wind from https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction. Flightradar widget from AirNav? Also, want to add a manual solar time calculator for given location. Also add video or at least link to last night's Stromlo video. I'd also like a moonrise calculator or a moon visibility curve.</p>
+          
+          <p style="font-size: medium;">Due to the volatile nature of weather in Canberra, as well as the prime view Mount Stromlo Observatory has for certain astronomical events, I've collated some forecast tools here to avoid the need to check multiple apps/websites/widgets. These are implemented using free APIs, widgets, or in the case of some NOAA data, hard coded from their available image files. The dusk/dawn times are also hard coded as no simple API seems to exist. These calculations were taken from NOAA's Global Monitoring Labratory <a href="https://gml.noaa.gov/grad/solcalc/calcdetails.html">solar calculation details</a>. I will likely put the Python and/or Javascript code on github soon for anyone interested. Weather warnings are provided by BOM via <a href="https://www.willyweather.com.au">WillyWeather</a>.</p>
+
+          <p style="font-size: medium;"> Some things on this page still need to be done: trying brentq instead of bisection method for root finding (see <a href="https://www.bomberbot.com/mathematics/mastering-root-finding-algorithms-in-javascript-a-comprehensive-guide/">this</a> and <a href="https://gist.github.com/ryanspradlin/18c1010b7dd2d875284933d018c5c908">this</a>, check that the twilight calculator is working (gives different results to <a href="https://www.timeanddate.com/astronomy/australia/canberra">this</a>, and I also need to check if the days are correct -- ie does midnight in CBR cause the next day to tick over for javascript? Maybe just print out the day in the section title), implement some extra info from the AAT pages <a href="https://aat-ops.anu.edu.au/AATdatabase/met.html">here</a> and <a href="https://aat-ops.anu.edu.au/met/">here</a>, add solar images from the following links: https://www.swpc.noaa.gov/products/goes-solar-ultraviolet-imager-suvi#, https://services.swpc.noaa.gov/products/animations/suvi-primary-284.json, https://services.swpc.noaa.gov/images/animations/suvi/primary/304/, https://www.sws.bom.gov.au/, https://www.sws.bom.gov.au/Images/SOLROT/noscript/SOL_IMG_9.jpg?11, and maybe put in solar wind from https://www.swpc.noaa.gov/products/wsa-enlil-solar-wind-prediction. Flightradar widget from AirNav? Also, want to add a manual solar time calculator for given location. Also add video or at least link to last night's Stromlo video. I'd also like a moonrise calculator or a moon visibility curve.</p>
+
         {{< /details >}}
 
         <p style="font-size: medium;"> </p>
@@ -38,33 +40,6 @@ sections:
           <div style="clear:both;"></div>
         </div>
 
-        <!-- Twilight times -->
-        <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-          <p><strong>Twilight Times for Today</strong></p>
-    
-          <p>Astr. Dawn: <span id="aDaTod"></span></p>
-          <p>Naut. Dawn: <span id="nDaTod"></span></p>
-          <p>Civil Dawn: <span id="cDaTod"></span></p>
-          <p>Sunrise: <span id="sunrTod"></span></p>
-          <p>Sunset: <span id="sunsTod"></span></p>
-          <p>Civil Dusk: <span id="cDuTod"></span></p>
-          <p>Naut. Dusk: <span id="nDuTod"></span></p>
-          <p>Astr. Dusk: <span id="aDuTod"></span></p>
-        </div>
-
-        <div style="width:620px; margin:0 auto; margin-bottom:20px;"></div>
-          <p><strong>Twilight Times for Tomorrow</strong></p>
-    
-          <p>Astr. Dawn: <span id="aDaTom"></span></p>
-          <p>Naut. Dawn: <span id="nDaTom"></span></p>
-          <p>Civil Dawn: <span id="cDaTom"></span></p>
-          <p>Sunrise: <span id="sunrTom"></span></p>
-          <p>Sunset: <span id="sunsTom"></span></p>
-          <p>Civil Dusk: <span id="cDuTom"></span></p>
-          <p>Naut. Dusk: <span id="nDuTom"></span></p>
-          <p>Astr. Dusk: <span id="aDuTom"></span></p>
-        </div>
-
         <!-- WillyWeather forecast -->
         <div style="width:620px; margin:0 auto; margin-bottom:20px;">
           <div style="width: 620px;">
@@ -72,115 +47,148 @@ sections:
           </div>
         </div>
 
-        <!-- Windy Maps -->
-        <div class="map-container" style="position: relative; width: 100%; max-width: 620px; margin-bottom: 20px; margin:0 auto; text-align: center;">
-
-          <!-- Full-width Canberra Rain and Thunder-->
+        {{< details title="Twilight Times" >}}
+        <!-- Twilight times -->
           <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-            <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
-          </div>
-          
-          <!-- Half-width Canberra weather radar and rain accumulation-->
-          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-            <div style="float:left;">
-              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=radar&product=radar&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
-            </div>
-            <div style="float:right;">
-              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rainAccu&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
-            </div>
-            <div style="clear:both;"></div>
+            <p><strong>Twilight Times for Today</strong></p>
+      
+            <p>Astr. Dawn: <span id="aDaTod"></span></p>
+            <p>Naut. Dawn: <span id="nDaTod"></span></p>
+            <p>Civil Dawn: <span id="cDaTod"></span></p>
+            <p>Sunrise: <span id="sunrTod"></span></p>
+            <p>Sunset: <span id="sunsTod"></span></p>
+            <p>Civil Dusk: <span id="cDuTod"></span></p>
+            <p>Naut. Dusk: <span id="nDuTod"></span></p>
+            <p>Astr. Dusk: <span id="aDuTod"></span></p>
           </div>
 
-          <!-- Half-width Canberra Wind and Wind gusts-->
-          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-            <div style="float:left;">
-              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=wind&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
+          <div style="width:620px; margin:0 auto; margin-bottom:20px;"></div>
+            <p><strong>Twilight Times for Tomorrow</strong></p>
+      
+            <p>Astr. Dawn: <span id="aDaTom"></span></p>
+            <p>Naut. Dawn: <span id="nDaTom"></span></p>
+            <p>Civil Dawn: <span id="cDaTom"></span></p>
+            <p>Sunrise: <span id="sunrTom"></span></p>
+            <p>Sunset: <span id="sunsTom"></span></p>
+            <p>Civil Dusk: <span id="cDuTom"></span></p>
+            <p>Naut. Dusk: <span id="nDuTom"></span></p>
+            <p>Astr. Dusk: <span id="aDuTom"></span></p>
+          </div>
+        {{< /details >}}
+
+
+
+        {{< details title="Maps" >}}
+          <!-- Windy Maps -->
+          <div class="map-container" style="position: relative; width: 100%; max-width: 620px; margin-bottom: 20px; margin:0 auto; text-align: center;">
+
+            <!-- Full-width Canberra Rain and Thunder-->
+            <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+              <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rain&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
             </div>
-            <div style="float:right;">
-              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=gust&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
+            
+            <!-- Half-width Canberra weather radar and rain accumulation-->
+            <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+              <div style="float:left;">
+                <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=radar&product=radar&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
+              </div>
+              <div style="float:right;">
+                <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=rainAccu&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
+              </div>
+              <div style="clear:both;"></div>
             </div>
-            <div style="clear:both;"></div>
+
+            <!-- Half-width Canberra Wind and Wind gusts-->
+            <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+              <div style="float:left;">
+                <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=wind&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
+              </div>
+              <div style="float:right;">
+                <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=7&overlay=gust&product=ecmwf&level=surface&lat=-35.604&lon=148.975&message=true" frameborder="0"></iframe>
+              </div>
+              <div style="clear:both;"></div>
+            </div>
+
+            <!-- Full-width Aus satellite-->
+            <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+              <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=4&overlay=satellite&product=satellite&level=surface&lat=-27.917&lon=133.857&message=true" frameborder="0"></iframe>
+            </div>
+
+            <!-- Half-width Aus temperature and rain and thunder -->
+            <div style="width:620px; margin:0 auto; margin-bottom:20px;">
+              <div style="float:left;">
+                <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=3&overlay=temp&product=ecmwf&level=surface&lat=-28.768&lon=133.945&message=true" frameborder="0"></iframe>
+              </div>
+              <div style="float:right;">
+                <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=3&overlay=rain&product=ecmwf&level=surface&lat=-28.768&lon=133.945&message=true" frameborder="0"></iframe>
+              </div>
+              <div style="clear:both;"></div>
+            </div>
+
+            <div class="interaction-blocker" id="blocker" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1); z-index: 10;"></div>
           </div>
 
-          <!-- Full-width Aus satellite-->
-          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-            <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=4&overlay=satellite&product=satellite&level=surface&lat=-27.917&lon=133.857&message=true" frameborder="0"></iframe>
+
+          <!-- Windy Map protection switch -->
+          <label style="position: relative; display: inline-block; width: 34px; height: 20px; margin-bottom: 20px;">
+            <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
+            <span style="
+              position: absolute;
+              cursor: pointer;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: #ccc;
+              transition: .4s;
+              border-radius: 20px;
+            "></span>
+            <span style="
+              position: absolute;
+              background-color: white;
+              border-radius: 50%;
+              height: 16px;
+              width: 16px;
+              left: 2px;
+              bottom: 2px;
+              transition: .4s;
+              transform: translateX(0);
+            "></span>
+          </label>
+        {{< /details >}}
+
+
+
+        {{< details title="Space Weather" >}}
+
+          <!-- Aurora Alert Data -->
+          <div id="aurora-alert-info" style="background-color: rgb(188, 0, 0); color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
+            <p>Loading Aurora Alert data...</p>
           </div>
 
-          <!-- Half-width Aus temperature and rain and thunder -->
-          <div style="width:620px; margin:0 auto; margin-bottom:20px;">
-            <div style="float:left;">
-              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=3&overlay=temp&product=ecmwf&level=surface&lat=-28.768&lon=133.945&message=true" frameborder="0"></iframe>
-            </div>
-            <div style="float:right;">
-              <iframe width="300" height="300" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=3&overlay=rain&product=ecmwf&level=surface&lat=-28.768&lon=133.945&message=true" frameborder="0"></iframe>
-            </div>
-            <div style="clear:both;"></div>
+          <!-- Aurora Watch Data -->
+          <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em; margin-bottom:20px;">
+            <p>Loading Aurora Watch data...</p>
           </div>
 
-          <div class="interaction-blocker" id="blocker" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1); z-index: 10;"></div>
-        </div>
-
-        <label style="position: relative; display: inline-block; width: 34px; height: 20px; margin-bottom: 20px;">
-          <input type="checkbox" id="toggleInteraction" style="opacity: 0; width: 0; height: 0;"/>
-          <span style="
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 20px;
-          "></span>
-          <span style="
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            height: 16px;
-            width: 16px;
-            left: 2px;
-            bottom: 2px;
-            transition: .4s;
-            transform: translateX(0);
-          "></span>
-        </label>
-
+          <!-- NOAA SH Aurora Forecast -->
+          <div class="animation" id="auroraAnimation" style="width:620px; margin:0 auto; text-align: center; margin-bottom:20px;">
+            <canvas id="auroraCanvas" title="Click to view full screen" height="620" width="620" style="max-width: 620px;"></canvas>
+            <div class="animationToolbar" style="max-width: 620px; display: flex; align-items: center; margin-top: 10px; justify-content: center;">
+              <!-- Play/Pause Button -->
+              <button id="startButton" class="animationButton startButton" style="border: 1px solid white; background-color: black; color: white; width: 80px; height: 40px; margin-right: 10px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s;" title="Play or Pause">Play</button>
+              <!-- Progress Bar -->
+              <div id="progressContainer" style="position: relative; width: 100%; max-width: 500px; flex-grow: 1; margin-left: 10px;">
+                <input type="range" id="progressBar" value="0" max="100" style="width: 100%; -webkit-appearance: none; background: #ddd; height: 6px; border-radius: 3px;">
+              </div>
+            </div>
+          </div>
         
-
-        <p><strong>Space Weather</strong></p>
-
-        <!-- Aurora Alert Data -->
-        <div id="aurora-alert-info" style="background-color: rgb(188, 0, 0); color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em;">
-          <p>Loading Aurora Alert data...</p>
-        </div>
-
-        <!-- Aurora Watch Data -->
-        <div id="aurora-watch-info" style="background-color: black; color: white; border: 1px solid white; padding: 2px; margin: 0px auto; width: 100%; font-size: small; line-height: 1.2em; margin-bottom:20px;">
-          <p>Loading Aurora Watch data...</p>
-        </div>
-
-        <!-- NOAA SH Aurora Forecast -->
-        <div class="animation" id="auroraAnimation" style="width:620px; margin:0 auto; text-align: center; margin-bottom:20px;">
-          <canvas id="auroraCanvas" title="Click to view full screen" height="620" width="620" style="max-width: 620px;"></canvas>
-          <div class="animationToolbar" style="max-width: 620px; display: flex; align-items: center; margin-top: 10px; justify-content: center;">
-            <!-- Play/Pause Button -->
-            <button id="startButton" class="animationButton startButton" style="border: 1px solid white; background-color: black; color: white; width: 80px; height: 40px; margin-right: 10px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s;" title="Play or Pause">Play</button>
-            <!-- Progress Bar -->
-            <div id="progressContainer" style="position: relative; width: 100%; max-width: 500px; flex-grow: 1; margin-left: 10px;">
-              <input type="range" id="progressBar" value="0" max="100" style="width: 100%; -webkit-appearance: none; background: #ddd; height: 6px; border-radius: 3px;">
-            </div>
-          </div>
-        </div>
-
-
-
+        {{< /details >}}
 
 
 
         {{< details title="AAT Information" >}}
-          <p><strong>AAT Sky Cam</strong></p>
 
           <!-- AAT SkyCam -->
           <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
@@ -190,20 +198,17 @@ sections:
 
           <!-- AAT Pano -->
           <!-- Doesn't work anymore. Fingers crossed for a replacement sky cam soon.
-          <p>AAT Panorama</p>
           <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
             <img id="AATPano" src="https://aat-ops.anu.edu.au/skycam/telescope/horizon.jpg" alt="AAT Pano Image" style="width: 100%; height: auto;">
             <button class="refresh-button" onclick="refreshImage('AATPano')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
           </div>
           -->
 
-          <p><strong>AAT Meteorology</strong></p>
           <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
             <img id="AATMeteorology" src="https://aat-ops.anu.edu.au/met/met.png" alt="AAT Meteorology" style="width: 100%; height: auto;">
             <button class="refresh-button" onclick="refreshImage('AATMeteorology')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
           </div>
 
-          <p><strong>AAT Sky Brightness</strong></p>
           <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
             <img id="AATSkyBrightness" src="https://aat-ops.anu.edu.au/met/metS.png" alt="AAT Sky Brightness" style="width: 100%; height: auto;">
             <button class="refresh-button" onclick="refreshImage('AATSkyBrightness')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
@@ -217,7 +222,6 @@ sections:
 
 
         {{< details title="MSO Information" >}}
-          <p><strong>MSO Cams</strong></p>
 
           <!-- MSO SkyCam -->
           <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">

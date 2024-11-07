@@ -12,5 +12,5 @@ details summary a {
 /* Optional hover effect */
 details summary:hover,
 details summary:hover a {
-    color: #a51c30 !important; /* Darker color on hover */
+    color: #729eff !important; /* Darker color on hover */
 }
