@@ -525,7 +525,7 @@ sections:
         <!-- Twilight calculator -->
         <script>
           class TwilightCalculator {
-            constructor(lat = -35.2802, long = 149.1310, timeZone = 10) {
+            constructor(lat = -35.2802, long = 149.1310, timeZone = 11) {
               this.lat = lat;
               this.long = long;
               this.timeZone = timeZone;
