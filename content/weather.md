@@ -540,15 +540,9 @@ sections:
               const GMAS = 357.52911 + julianCentury * (35999.05029 - 0.0001537 * julianCentury);
               const eccentEarthOrbit = 0.016708634 - julianCentury * (0.000042037 + 0.0000001267 * julianCentury);
 
-              /*
               const sunEqOfCtr = Math.sin(this.degToRad(GMAS)) * (1.914602 - julianCentury * (0.004817 + 0.000014 * julianCentury)) +
                 Math.sin(this.degToRad(2 * GMAS)) * (0.019993 - 0.000101 * julianCentury) +
                 Math.sin(this.degToRad(3 * GMAS)) * 0.000289;
-              */
-
-              const sunEqOfCtr = Math.sin(GMAS) * (1.914602 - julianCentury * (0.004817 + 0.000014 * julianCentury)) +
-                Math.sin(2 * GMAS) * (0.019993 - 0.000101 * julianCentury) +
-                Math.sin(3 * GMAS) * 0.000289;
 
               const sunTrueLong = GMLS + sunEqOfCtr;
               const sunAppLong = sunTrueLong - 0.00569 - 0.00478 * Math.sin(this.degToRad(125.04 - 1934.136 * julianCentury));
