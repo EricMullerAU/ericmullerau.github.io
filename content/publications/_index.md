@@ -50,4 +50,53 @@ sections:
         featured_only: false
     design:
       view: citation
+# Rather than using a citation view, instead use a basic markdown view with manually-added publication information.
+  - block: markdown
+    content: |
+      ## Preprints
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+      - **An example preprint / working paper**
+        - *admin*
+        - 2019-04-07
+        - [Download preprint](http://arxiv.org/pdf/1512.04133v1)
+
 ---
