@@ -54,6 +54,7 @@ sections:
   - block: markdown
     design:
       columns: '1'
+      width: 'full'
     content:
       title: Publications
       text: |
