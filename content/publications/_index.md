@@ -40,16 +40,16 @@ sections:
 #       view: article-grid
 #       fill_image: true
 #       columns: 3
-  - block: collection
-    content:
-      title: Publications
-      text: ""
-      filters:
-        folders:
-          - publications
-        featured_only: false
-    design:
-      view: citation
+  # - block: collection
+  #   content:
+  #     title: Publications
+  #     text: ""
+  #     filters:
+  #       folders:
+  #         - publications
+  #       featured_only: false
+  #   design:
+  #     view: citation
 # Rather than using a citation view, instead use a basic markdown view with manually-added publication information.
   - block: markdown
     design:
@@ -58,9 +58,10 @@ sections:
       title: Publications
       text: |
         <p style="font-size: medium;">
-        <b>2024</b>
+        <b style="font-size: large;">2024</b>
         <ul>
           <li>Hiep Nguyen, Haiyang Tang, Matthew Alger, Antoine Marchal, <b>Eric G. M. Muller</b>, Cheng Soon Ong, N. M. McClure-Griffiths. TPCNet: Representation learning for HI mapping <i>Monthly Notices of the Royal Astronomical Society, Volume XX, Issue X, November 2024, Pages XXX</i>
+
             <a href="http://arxiv.org/abs/2411.13325">arxiv</a> <a href="https://doi.org/10.48550/arXiv.2411.13325">DOI</a></li>
         </ul>
 
