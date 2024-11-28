@@ -14,8 +14,3 @@ details summary:hover,
 details summary:hover a {
     color: #729eff !important; /* Darker color on hover */
 }
-
-/* Customize the width of the pages */
-.container {
-    width: 90%; /* Adjusts width of the pages */
-}
