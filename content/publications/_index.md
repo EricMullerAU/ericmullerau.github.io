@@ -52,21 +52,11 @@ sections:
       view: citation
 # Rather than using a citation view, instead use a basic markdown view with manually-added publication information.
   - block: markdown
+    design:
+      columns: '1'
     content:
       title: Publications
-      text: "This page lists my publications. For a more detailed list, please see my [Google Scholar profile](https://scholar.google.com/citations?user=YOUR_ID)."
-  - block: markdown
-    content:
-      title: Preprints
-      text: "This page lists my preprints. For a more detailed list, please see my [Google Scholar profile](https://scholar.google.com/citations?user=YOUR_ID)."
-  - block: collection
-    content:
-      title: Preprints
-      text: ""
-      filters:
-        folders:
-          - preprints
-        featured_only: false
-    design:
-      view: citation
+      text: |
+        <h2>Preprints</h2>
+  
 ---
