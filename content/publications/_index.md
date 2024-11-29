@@ -56,14 +56,14 @@ sections:
       columns: '1'
       css_style: |
         @media (max-width: 600px) {
-          .publication-list {
+          body {
             font-size: small;
             max-width: 100%;
             color: red !important;
           }
         }
         @media (min-width: 601px) {
-          .publication-list {
+          body {
             font-size: medium;
             max-width: 1000px;
           }
@@ -71,9 +71,9 @@ sections:
     content:
       title: Publications
       text: |
-        <p class="publication-list" style="text-align: left;"><b style="font-size: large;">2024</b></p>
+        <p style="text-align: left; font-size: large;"><b>2024</b></p>
         <ul style="list-style-position: inside; padding-left: 0; width: 1000px;">
-          <li style="font-size: medium; text-align: left;">Hiep Nguyen, Haiyang Tang, Matthew Alger, Antoine Marchal, <b>Eric G. M. Muller</b>, Cheng Soon Ong, N. M. McClure-Griffiths. TPCNet: Representation learning for HI mapping <i>Monthly Notices of the Royal Astronomical Society, Volume XX, Issue X, November 2024, Pages XXX</i><br><a href="http://arxiv.org/abs/2411.13325">arxiv</a> <a href="https://doi.org/10.48550/arXiv.2411.13325">DOI</a></li>
+          <li style="text-align: left;">Hiep Nguyen, Haiyang Tang, Matthew Alger, Antoine Marchal, <b>Eric G. M. Muller</b>, Cheng Soon Ong, N. M. McClure-Griffiths. TPCNet: Representation learning for HI mapping <i>Monthly Notices of the Royal Astronomical Society, Volume XX, Issue X, November 2024, Pages XXX</i><br><a href="http://arxiv.org/abs/2411.13325">arxiv</a> <a href="https://doi.org/10.48550/arXiv.2411.13325">DOI</a></li>
         </ul>
   
 ---
