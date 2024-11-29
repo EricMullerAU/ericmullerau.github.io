@@ -109,10 +109,10 @@ sections:
               <div style="clear:both;"></div>
             </div>
 
-            <!-- Full-width Aus satellite-->
+            <!-- Full-width Aus satellite
             <div style="width:620px; margin:0 auto; margin-bottom:20px;">
               <iframe width="620" height="620" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=4&overlay=satellite&product=satellite&level=surface&lat=-27.917&lon=133.857&message=true" frameborder="0"></iframe>
-            </div>
+            </div> -->
 
             <!-- Half-width Aus temperature and rain and thunder -->
             <div style="width:620px; margin:0 auto; margin-bottom:20px;">
