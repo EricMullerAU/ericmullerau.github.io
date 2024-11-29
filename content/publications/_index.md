@@ -55,6 +55,7 @@ sections:
     design:
       columns: '1'
       css_style: 'max-width: 1200px;'
+      text_align: 'center'
     content:
       title: Publications
       text: |
