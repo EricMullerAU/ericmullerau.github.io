@@ -54,7 +54,20 @@ sections:
   - block: markdown
     design:
       columns: '1'
-      css_style: 'max-width: 1200px; text-align: center; margin: auto; '
+      <!-- css_style: 'max-width: 1200px; text-align: center; margin: auto; ' -->
+      css_style: |
+        @media (max-width: 600px) {
+          .publication-list {
+            font-size: small;
+            max-width: 100%;
+          }
+        }
+        @media (min-width: 601px) {
+          .publication-list {
+            font-size: medium;
+            max-width: 1000px;
+          }
+        }
     content:
       title: Publications
       text: |
