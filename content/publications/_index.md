@@ -54,11 +54,11 @@ sections:
   - block: markdown
     design:
       columns: '1'
-      css_style: 'max-width: 1200px; text-align: center; margin: auto;'
+      css_style: 'max-width: 1200px; text-align: center; margin: auto; '
     content:
       title: Publications
       text: |
-        <p><b style="font-size: large;">2024</b>
+        <p style="text-align: left;"><b style="font-size: large;">2024</b>
         <ul>
           <li style="font-size: medium;">Hiep Nguyen, Haiyang Tang, Matthew Alger, Antoine Marchal, <b>Eric G. M. Muller</b>, Cheng Soon Ong, N. M. McClure-Griffiths. TPCNet: Representation learning for HI mapping <i>Monthly Notices of the Royal Astronomical Society, Volume XX, Issue X, November 2024, Pages XXX</i><br><a href="http://arxiv.org/abs/2411.13325">arxiv</a> <a href="https://doi.org/10.48550/arXiv.2411.13325">DOI</a></li>
         </ul>
