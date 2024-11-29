@@ -54,8 +54,7 @@ sections:
   - block: markdown
     design:
       columns: '1'
-      css_style: 'max-width: 1200px;'
-      text_align: 'center'
+      css_style: 'max-width: 1200px; text-align: center; margin: auto;'
     content:
       title: Publications
       text: |
