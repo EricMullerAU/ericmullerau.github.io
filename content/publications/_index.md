@@ -59,6 +59,7 @@ sections:
           .publication-list {
             font-size: small;
             max-width: 100%;
+            color: blue;
           }
         }
         @media (min-width: 601px) {
