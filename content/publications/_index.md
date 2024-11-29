@@ -56,14 +56,14 @@ sections:
       columns: '1'
       text: |
         <style>
-          @media (max-width: 600px) {
+          @media (max-width: 1000px) {
             .publication-list {
               font-size: small;
               max-width: 100%;
               color: blue;
             }
           }
-          @media (min-width: 601px) {
+          @media (min-width: 1001px) {
             .publication-list {
               font-size: medium;
               max-width: 1000px;
