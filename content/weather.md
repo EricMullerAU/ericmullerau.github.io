@@ -196,13 +196,17 @@ sections:
             <button class="refresh-button" onclick="refreshImage('AATSkyCam')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
           </div>
 
+          <!-- AAT New SkyCam -->
+          <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
+            <img id="AATNewSkyCam" src="https://aat-ops.anu.edu.au/skycam/telescope/telescope.jpg" alt="AAT New Skycam Image" style="width: 100%; height: auto;">
+            <button class="refresh-button" onclick="refreshImage('AATNewSkyCam')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
+          </div>
+          
           <!-- AAT Pano -->
-          <!-- Doesn't work anymore. Fingers crossed for a replacement sky cam soon.
           <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
             <img id="AATPano" src="https://aat-ops.anu.edu.au/skycam/telescope/horizon.jpg" alt="AAT Pano Image" style="width: 100%; height: auto;">
             <button class="refresh-button" onclick="refreshImage('AATPano')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
           </div>
-          -->
 
           <div class="image-container" style="position: relative; width:620px; margin:0 auto; margin-bottom:20px;">
             <img id="AATMeteorology" src="https://aat-ops.anu.edu.au/met/met.png" alt="AAT Meteorology" style="width: 100%; height: auto;">
@@ -213,6 +217,12 @@ sections:
             <img id="AATSkyBrightness" src="https://aat-ops.anu.edu.au/met/metS.png" alt="AAT Sky Brightness" style="width: 100%; height: auto;">
             <button class="refresh-button" onclick="refreshImage('AATSkyBrightness')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
           </div>
+
+          # Add the last night video here
+          <video width="620" height="auto" controls>
+            <source src="https://aat-ops.anu.edu.au/skycam/telescope/last_Night_AAT.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
 
         {{< /details >}}
         
@@ -240,6 +250,12 @@ sections:
             <img id="MSOHorizon" src="https://www.mso.anu.edu.au/~brad/brightsky/reynolds/latest.jpg" alt="MSO Western Horizon Image" style="width: 100%; height: auto;">
             <button class="refresh-button" onclick="refreshImage('MSOHorizon')" style="position: absolute;bottom: 5px; right: 5px; background-color: rgba(0, 0, 0, 0.5); color: white;border: none; padding: 2px; border-radius: 5px; cursor: pointer; z-index: 10; font-size: small;">Refresh</button>
           </div>
+
+          <video width="620" height="auto" controls>
+            <source src="https://www.mso.anu.edu.au/~brad/brightsky/reynolds/latest.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
 
         {{< /details >}}
 
