@@ -39,14 +39,18 @@ profiles:
   #   url: https://www.instagram.com/
   - icon: brands/github
     url: https://github.com/EricMullerAU
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/in/eric-muller-au/
+  - icon: academicons/arxiv
+    url: https://arxiv.org/a/muller_e_2.html
+  - icon: academicons/ads
+    url: https://ui.adsabs.harvard.edu/search/filter_author_facet_hier_fq_author=AND&filter_author_facet_hier_fq_author=author_facet_hier%3A%221%2FMuller%2C%20E%2FMuller%2C%20Eric%20G%20%20M%22&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq=%7B!type%3Daqp%20v%3D%24fq_author%7D&fq_author=(author_facet_hier%3A%221%2FMuller%2C%20E%2FMuller%2C%20Eric%20G%20%20M%22)&fq_database=(database%3Aastronomy)&p_=0&q=%20author%3A%22muller%2C%20E.%20G.%20M.%22&sort=date%20desc%2C%20bibcode%20desc
   # - icon: academicons/google-scholar
   #   url: https://scholar.google.com/
   - icon: academicons/orcid
     url: https://orcid.org/0000-0001-5621-1577
   - icon: academicons/researchgate
     url: https://www.researchgate.net/profile/Eric-Muller-14
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/eric-muller-au/
 
 interests:
   - Machine Learning
