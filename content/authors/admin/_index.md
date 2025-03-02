@@ -133,7 +133,13 @@ skills:
       - name: pyro
         description: ''
         # percent: 10
+        icon: pyro_logo.ico
+      - name: Test ico
+        icon: pyro_logo
+      - name: Test ico 2
         icon: pyro_logo.png
+      - name: Test ico 3
+        icon: /icons/pyro_logo.ico
   - name: Astronomy
     items:
       - name: TOPCAT
