@@ -35,16 +35,12 @@ profiles:
     label: E-mail Me
   - icon: brands/x
     url: https://x.com/Eric__Muller
-  # - icon: brands/instagram
-  #   url: https://www.instagram.com/
   - icon: brands/github
     url: https://github.com/EricMullerAU
   - icon: academicons/arxiv
     url: https://arxiv.org/a/muller_e_2.html
   - icon: academicons/ads
     url: https://ui.adsabs.harvard.edu/search/filter_author_facet_hier_fq_author=AND&filter_author_facet_hier_fq_author=author_facet_hier%3A%221%2FMuller%2C%20E%2FMuller%2C%20Eric%20G%20%20M%22&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq=%7B!type%3Daqp%20v%3D%24fq_author%7D&fq_author=(author_facet_hier%3A%221%2FMuller%2C%20E%2FMuller%2C%20Eric%20G%20%20M%22)&fq_database=(database%3Aastronomy)&p_=0&q=%20author%3A%22muller%2C%20E.%20G.%20M.%22&sort=date%20desc%2C%20bibcode%20desc
-  # - icon: academicons/google-scholar
-  #   url: https://scholar.google.com/
   - icon: academicons/orcid
     url: https://orcid.org/0000-0001-5621-1577
   - icon: academicons/researchgate
@@ -124,16 +120,20 @@ skills:
     items:
       - name: PyTorch
         description: ''
-        percent: 60
+        # percent: 60
         icon: devicon/pytorch
       - name: Scikit-Learn
         description: ''
-        percent: 40
+        # percent: 40
         icon: devicon/scikitlearn
       - name: tensorflow
         description: ''
-        percent: 20
+        # percent: 20
         icon: devicon/tensorflow
+      - name: pyro
+        description: ''
+        # percent: 10
+        icon: assets/media/icons/pyro_logo.png
   - name: Astronomy
     items:
       - name: TOPCAT
