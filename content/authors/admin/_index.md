@@ -133,7 +133,7 @@ skills:
       - name: pyro
         description: ''
         # percent: 10
-        icon: pyro_logo2.ico
+        icon: pyro_logo.svg
       - name: Test ico
         icon: pyro_logo
       - name: Test ico 2
