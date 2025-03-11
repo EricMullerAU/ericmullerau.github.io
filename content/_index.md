@@ -42,17 +42,17 @@ sections:
   #       Please reach out to collaborate 😃
   #   design:
   #     columns: '1'
-  - block: collection
-    id: papers
-    content:
-      title: Featured Publications
-      filters:
-        folders:
-          - publication
-        featured_only: false
-    design:
-      view: article-grid
-      columns: 2
+  # - block: collection
+  #   id: papers
+  #   content:
+  #     title: Featured Publications
+  #     filters:
+  #       folders:
+  #         - publication
+  #       featured_only: false
+  #   design:
+  #     view: article-grid
+  #     columns: 2
   - block: collection
     content:
       title: Current Projects
@@ -82,9 +82,11 @@ sections:
     content:
       title: Recent Publications
       text: |
-        <p style="text-align: left;"><b style="font-size: large;">2024</b></p>
-        <ul style="list-style-position: inside; padding-left: 0;">
-          <li style="font-size: medium; text-align: left;">Hiep Nguyen, Haiyang Tang, Matthew Alger, Antoine Marchal, <b>Eric G. M. Muller</b>, Cheng Soon Ong, N. M. McClure-Griffiths. TPCNet: Representation learning for HI mapping <i>Monthly Notices of the Royal Astronomical Society, Volume XX, Issue X, November 2024, Pages XXX</i><br><a href="http://arxiv.org/abs/2411.13325">arxiv</a> <a href="https://doi.org/10.48550/arXiv.2411.13325">DOI</a></li>
+        <p style="text-align: left; font-size: large;"><b>2025</b></p>
+        <ul style="list-style-position: inside; padding-left: 0; width: 1000px;">
+          <li style="text-align: left;">Caroline Foster, Mark W. Donoghoe, Andrew Battisti, <b>et al.</b> The MAGPI Survey: the kinematic morphology-density relation (or lack thereof) and the Hubble sequence at z ∼ 0.3 <i>Publications of the Astronomical Society of Australia, accepted for publication, February 2025</i><br><a href="https://arxiv.org/abs/2502.16751">arxiv</a></li>
+          <li style="text-align: left;">Marcie Mun, Emily Wisnioski, Katherine E. Harborne, <b>et al.</b> The MAGPI Survey: radial trends in star formation across different cosmological simulations in comparison with observations at z ∼ 0.3 <i>Monthly Notices of the Royal Astronomical Society, accepted for publication, February 2025</i><br><a href="https://arxiv.org/abs/2411.17882">arxiv</a> <a href="https://academic.oup.com/mnras/advance-article/doi/10.1093/mnras/staf342/8045600">MNRAS</a></li>
+          <li style="text-align: left;">Hiep Nguyen, Haiyang Tang, Matthew Alger, Antoine Marchal, <b>Eric G. M. Muller</b>, Cheng Soon Ong, N. M. McClure-Griffiths. TPCNet: representation learning for HI mapping <i>Monthly Notices of the Royal Astronomical Society, Volume 536, Issue 1, January 2025, Pages 962-987</i><br><a href="http://arxiv.org/abs/2411.13325">arxiv</a> <a href=https://academic.oup.com/mnras/article/536/1/962/7908519">MNRAS</a></li>
         </ul>
   - block: resume-skills
     content:
